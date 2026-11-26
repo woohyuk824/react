@@ -59,6 +59,7 @@ export class ButtonFx {
     this.gl.set('_ShineDirection', [Math.SQRT1_2 * w, -Math.SQRT1_2 * h])
     this.gl.set('_GlowColor', this.glowColor)
     if (this.el.imageLayer) this.el.imageLayer.style.visibility = 'hidden'
+    this.gl.fallback = this.el.imageLayer
     this.el.insertBefore(this.gl.canvas, this.el.imageLayer?.nextSibling ?? this.el.firstChild)
     this.draw()
   }
@@ -111,6 +112,14 @@ export class ButtonFx {
       onComplete: () => { this.progress = 1; this.draw() },
     })
     this.draw()
+  }
+
+  /** 더 이상 보이지 않는 버튼의 WebGL 컨텍스트를 반환한다. */
+  release() {
+    this.wipe?.kill()
+    this.gl?.dispose()
+    this.gl = null
+    if (this.el.imageLayer) this.el.imageLayer.style.visibility = 'visible'
   }
 
   /** 검수용: 활성화 와이프를 특정 진행값에 고정 */

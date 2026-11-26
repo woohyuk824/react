@@ -44,6 +44,23 @@ export class GLSurface {
     gl.vertexAttribPointer(loc, 2, gl.FLOAT, false, 0, 0)
     gl.enable(gl.BLEND)
     gl.blendFunc(gl.ONE, gl.ONE_MINUS_SRC_ALPHA)
+    // 휴대폰은 동시에 유지할 수 있는 WebGL 컨텍스트 수가 적다. 브라우저가 컨텍스트를 회수하면
+    // 캔버스가 비므로, 숨겨 두었던 원본 이미지(fallback)를 다시 보여 준다.
+    this.canvas.addEventListener('webglcontextlost', () => {
+      this.lost = true
+      this.canvas.style.visibility = 'hidden'
+      if (this.fallback) this.fallback.style.visibility = 'visible'
+    })
+  }
+
+  /** 컨텍스트를 잃었을 때 다시 보여 줄 원본 이미지 레이어 */
+  fallback?: HTMLElement
+  lost = false
+
+  /** 같은 컨텍스트를 다른 크기의 노드에 재사용할 때 캔버스 해상도를 바꾼다. */
+  resize(w: number, h: number, dpr = Math.min(2, window.devicePixelRatio || 1)) {
+    this.canvas.width = Math.max(1, Math.round(w * dpr))
+    this.canvas.height = Math.max(1, Math.round(h * dpr))
   }
 
   setTexture(name: string, source: TexImageSource) {
@@ -70,6 +87,7 @@ export class GLSurface {
 
   draw() {
     const gl = this.gl
+    if (this.lost || gl.isContextLost()) return
     gl.useProgram(this.prog)
     gl.viewport(0, 0, this.canvas.width, this.canvas.height)
     gl.clearColor(0, 0, 0, 0)

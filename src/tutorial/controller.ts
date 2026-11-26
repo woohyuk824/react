@@ -23,6 +23,8 @@ interface ProductSet { main: Product; list_nine: Product[]; list_vip?: Product[]
 const Steps = { Intro: 0, Single: 1, Motion: 2, ReceiveSingle: 3, Complete: 4 } as const
 type Steps = (typeof Steps)[keyof typeof Steps]
 
+const CLAW_OPEN = 'unity/_Images/Content/PlayMain/PlayMainDrawing/Theme/Main/Image_DrawClawOpen.png'
+
 const wait = (s: number) => new Promise<void>((r) => setTimeout(r, s * 1000))
 const tweenDone = (t: gsap.core.Animation) => new Promise<void>((r) => t.eventCallback('onComplete', () => r()))
 
@@ -230,6 +232,19 @@ export class Tutorial {
   // ---------------------------------------------------------------- 상시 효과
   private ambientRaf = 0
   private clawFx?: { fx: GLSurface; src: string | null }
+  /** 기계 화면에서만 쓰는 WebGL 효과. 결과 화면으로 넘어가면 해제해 휴대폰 컨텍스트 한도를 넉넉히 남긴다. */
+  private machineGL: GLSurface[] = []
+
+  private releaseMachineGL() {
+    this.dummyGoldStop = true
+    for (const fx of this.machineGL) fx.dispose()
+    this.machineGL = []
+    this.clawFx?.fx.dispose()
+    this.clawFx = undefined
+    this.surface?.dispose()
+    this.surface = undefined
+    this.draw.release()
+  }
 
   /** ImageNormalFx(Image_Front, Image_Claw: 4s 조명 흔들림) + GlassShine(Image_Glass: 4.5s 펄스) */
   private async startAmbient() {
@@ -247,16 +262,22 @@ export class Tutorial {
       frontFx.setTexture('_MainTex', frontImg)
       frontFx.setTexture('_NormalTex', frontNormal)
       frontFx.set('_Strength', 1)
+      frontFx.fallback = front.imageLayer
       front.appendChild(frontFx.canvas)
       if (front.imageLayer) front.imageLayer.style.visibility = 'hidden'
+      this.machineGL.push(frontFx)
     }
     let glassFx: GLSurface | undefined
     if (glassImg) {
       glassFx = new GLSurface(GLASS_FRAG, glass.rectW, glass.rectH)
       glassFx.setTexture('_MainTex', glassImg)
+      glassFx.fallback = glass.imageLayer
       glass.appendChild(glassFx.canvas)
       if (glass.imageLayer) glass.imageLayer.style.visibility = 'hidden'
+      this.machineGL.push(glassFx)
     }
+    // 열림/닫힘 집게를 미리 준비해 뽑기 순간 교체가 같은 프레임에 끝나게 한다.
+    void this.loadClaw(CLAW_OPEN)
     await this.refreshClawFx()
     const start = performance.now()
     const tick = () => {
@@ -278,24 +299,52 @@ export class Tutorial {
   }
 
   /** 집게 스프라이트(열림/닫힘)가 바뀌면 노멀맵을 다시 만든다. */
+  // 집게 열림/닫힘 스프라이트의 이미지·노멀맵 캐시. 교체 순간에 비는 프레임이 없도록 미리 만들어 둔다.
+  private clawCache = new Map<string, Promise<{ img: HTMLImageElement; normal: HTMLCanvasElement } | undefined>>()
+
+  private loadClaw(src: string) {
+    let p = this.clawCache.get(src)
+    if (!p) {
+      p = loadImage(assetUrl(src))
+        .then((img) => ({ img, normal: buildNormalMap(img) }))
+        .catch(() => undefined)
+      this.clawCache.set(src, p)
+    }
+    return p
+  }
+
+  /** 집게 스프라이트(열림/닫힘)가 바뀌면 같은 캔버스에 텍스처만 바꿔 그린다. 준비 전에는 원본 이미지를 그대로 보여 준다. */
   private async refreshClawFx() {
     const claw = this.g('Image_Claw')
     const src = claw.unode.image?.src ?? null
-    if (this.clawFx?.src === src) return
-    this.clawFx?.fx.dispose()
-    this.clawFx = undefined
-    if (!src) return
-    const img = await loadImage(assetUrl(src)).catch(() => undefined)
-    if (!img) return
-    const fx = new GLSurface(NORMALFX_FRAG, claw.rectW, claw.rectH)
-    fx.setTexture('_MainTex', img)
-    fx.setTexture('_NormalTex', buildNormalMap(img))
-    fx.set('_Strength', 1)
-    fx.set('_Light', [0.15, 0.6, 0.4])
+    if (!src || this.clawFx?.src === src) return
+    const data = await this.loadClaw(src)
+    // 기다리는 동안 스프라이트가 다시 바뀌었으면 최신 요청만 반영한다.
+    if (!data || claw.unode.image?.src !== src) return
+    let fx = this.clawFx?.fx
+    if (!fx) {
+      fx = new GLSurface(NORMALFX_FRAG, claw.rectW, claw.rectH)
+      fx.set('_Strength', 1)
+      fx.set('_Light', [0.15, 0.6, 0.4])
+      fx.fallback = claw.imageLayer
+      claw.appendChild(fx.canvas)
+    }
+    fx.setTexture('_MainTex', data.img)
+    fx.setTexture('_NormalTex', data.normal)
     fx.draw()
-    claw.appendChild(fx.canvas)
     if (claw.imageLayer) claw.imageLayer.style.visibility = 'hidden'
     this.clawFx = { fx, src }
+  }
+
+  /** 스프라이트를 바꾸는 즉시: 캐시가 있으면 같은 프레임에 셰이더 텍스처도 바꾸고, 없으면 원본 이미지를 보이게 둔다. */
+  private setClawSprite(src: string | null) {
+    const claw = this.g('Image_Claw')
+    setImageSrc(claw, src)
+    if (claw.imageLayer && this.clawFx?.src !== src) claw.imageLayer.style.visibility = 'visible'
+    if (this.clawFx) this.clawFx.fx.canvas.style.visibility = 'hidden'
+    void this.refreshClawFx().then(() => {
+      if (this.clawFx) this.clawFx.fx.canvas.style.visibility = 'visible'
+    })
   }
 
   /** GO_Result 활성화 시 GO_LightEffect 파티클(OnEnable 재생) */
@@ -399,9 +448,7 @@ export class Tutorial {
   private async corDraw() {
     this.lockButtons()
     this.joystick.setPlayMotion(true)
-    const clawImg = this.g('Image_Claw')
-    setImageSrc(clawImg, 'unity/_Images/Content/PlayMain/PlayMainDrawing/Theme/Main/Image_DrawClawOpen.png')
-    void this.refreshClawFx()
+    this.setClawSprite(CLAW_OPEN)
     playSound(Sounds.drawMove, 0.5)
     const down = this.g('RT_ClawDown')
     const s = { y: this.clawPos[1] }
@@ -409,8 +456,7 @@ export class Tutorial {
       y: this.clawPos[1] - 600, duration: 0.55, ease: 'power1.in',
       onUpdate: () => setAnchoredPos(down, this.clawPos[0], s.y),
     }))
-    setImageSrc(clawImg, this.clawClosedSrc)
-    void this.refreshClawFx()
+    this.setClawSprite(this.clawClosedSrc)
     await wait(0.25)
 
     // DrawingResultTransition: 집게 손 기준 ×3 줌 + 블러 3 → 12
@@ -443,6 +489,7 @@ export class Tutorial {
       this.resetResultImage()
       setActive(this.g('GO_Machine'), false)
       setActive(this.g('GO_Result'), true)
+      this.releaseMachineGL()
       this.startResultLight()
       const title = this.reg.find('Text_TutorialTitle')
       if (title) setActive(title, false)
@@ -583,13 +630,22 @@ export class Tutorial {
           continue
         }
       }
-      const fx = new GLSurface(GOLD_FRAG, d.rectW, d.rectH)
+      // 컨텍스트 하나를 더미 5개가 돌려 쓴다(매번 새로 만들면 휴대폰 WebGL 한도를 넘어 다른 효과가 지워진다).
+      if (!this.surface || this.surface.lost) {
+        this.surface = new GLSurface(GOLD_FRAG, d.rectW, d.rectH)
+        this.surface.set('_Shine', [3, 0.16, Math.cos((-20 * Math.PI) / 180), Math.sin((-20 * Math.PI) / 180)])
+      } else {
+        this.surface.resize(d.rectW, d.rectH)
+      }
+      const fx = this.surface
       fx.setTexture('_MainTex', entry.img)
       fx.setTexture('_NormalTex', entry.normal)
-      fx.set('_Shine', [3, 0.16, Math.cos((-20 * Math.PI) / 180), Math.sin((-20 * Math.PI) / 180)])
+      fx.fallback = d.imageLayer
+      fx.canvas.style.visibility = 'visible'
+      fx.set('_P', 0)
+      fx.draw()
       d.appendChild(fx.canvas)
-      if (d.imageLayer) d.imageLayer.style.visibility = 'hidden'
-      this.surface = fx
+      if (d.imageLayer && !fx.lost) d.imageLayer.style.visibility = 'hidden'
       const start = performance.now()
       await new Promise<void>((resolve) => {
         const tick = () => {
@@ -604,8 +660,7 @@ export class Tutorial {
         requestAnimationFrame(tick)
       })
       if (d.imageLayer) d.imageLayer.style.visibility = ''
-      fx.dispose()
-      this.surface = undefined
+      fx.canvas.remove()
       i = (i + 1) % 5
     }
   }
@@ -668,6 +723,7 @@ export class Tutorial {
     fx.set('_ShineColor', [1, 0.88, 0.65])
     fx.set('_ShineWidth', 0.09)
     fx.set('_ShineStrength', 0.8)
+    fx.fallback = image.imageLayer
     holder.appendChild(fx.canvas)
     image.appendChild(holder)
     if (image.imageLayer) image.imageLayer.style.visibility = 'hidden'
