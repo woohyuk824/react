@@ -8,16 +8,25 @@ import { VitePWA } from 'vite-plugin-pwa'
 // 채널을 늘리려면 배열에 이름만 추가한다. (예: 'insta', 'youtube')
 const CHANNEL_PATHS = ['ad']
 
+// 배포 주소(끝에 / 포함). 도메인이 바뀌면 여기만 고친다. 링크 미리보기 이미지·주소에 쓰인다.
+const SITE_URL = 'https://woohyuk824.github.io/react/'
+
 function channelPages(): Plugin {
   return {
     name: 'channel-pages',
     apply: 'build',
+    transformIndexHtml(html) {
+      return html.replaceAll('__SITE_URL__', SITE_URL)
+    },
     closeBundle() {
       const dist = resolve(__dirname, 'dist')
       const html = readFileSync(resolve(dist, 'index.html'), 'utf8')
       for (const name of CHANNEL_PATHS) {
         mkdirSync(resolve(dist, name), { recursive: true })
-        writeFileSync(resolve(dist, name, 'index.html'), html.replace('<head>', '<head>\n    <base href="../" />'))
+        const page = html
+          .replace('<head>', '<head>\n    <base href="../" />')
+          .replace(`<meta property="og:url" content="${SITE_URL}" />`, `<meta property="og:url" content="${SITE_URL}${name}/" />`)
+        writeFileSync(resolve(dist, name, 'index.html'), page)
       }
     },
   }
