@@ -1,0 +1,49 @@
+{
+ "unity/_Images/Content/PlayMain/PlayMainDrawing/Theme/Main/Image_DrawJoyStick.png": [
+  {
+   "name": "Image_DrawJoyStick_0",
+   "rect": [
+    0,
+    0,
+    409.6,
+    410
+   ]
+  },
+  {
+   "name": "Image_DrawJoyStick_1",
+   "rect": [
+    409.6,
+    0,
+    409.6,
+    410
+   ]
+  },
+  {
+   "name": "Image_DrawJoyStick_2",
+   "rect": [
+    819.2,
+    0,
+    409.6,
+    410
+   ]
+  },
+  {
+   "name": "Image_DrawJoyStick_3",
+   "rect": [
+    1228.8,
+    0,
+    409.6,
+    410
+   ]
+  },
+  {
+   "name": "Image_DrawJoyStick_4",
+   "rect": [
+    1638.4,
+    0,
+    409.6,
+    410
+   ]
+  }
+ ]
+}

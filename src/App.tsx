@@ -1,137 +1,101 @@
-import { useEffect, useMemo, useRef, useState } from 'react'
-import { loadMemos, saveMemos, type Memo } from './storage'
+import { useEffect, useRef, useState } from 'react'
+import { Tutorial, type ResultProduct } from './tutorial/controller'
+import StorePopup from './StorePopup'
+import { preloadSounds, unlockAudio } from './tutorial/sound'
+import { assetUrl } from './unity/rect'
 import './App.css'
 
-function newId(): string {
-  return Date.now().toString(36) + Math.random().toString(36).slice(2, 8)
+function platform(): 'ios' | 'android' | 'other' {
+  const ua = navigator.userAgent
+  if (/iPhone|iPad|iPod/i.test(ua) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1)) return 'ios'
+  if (/Android/i.test(ua)) return 'android'
+  return 'other'
 }
 
-function formatDate(ts: number): string {
-  const d = new Date(ts)
-  const now = new Date()
-  if (d.toDateString() === now.toDateString()) {
-    return d.toLocaleTimeString('ko-KR', { hour: '2-digit', minute: '2-digit' })
+/** Unity CanvasScaler: 기준 1080x2160, 폭 기준(match 0). PC 는 1:2 세로 화면으로 맞춘다. */
+function useStage() {
+  const calc = () => {
+    if (new URLSearchParams(location.search).has('snap')) return { w: 1080, h: 2160, scale: 1, virtualH: 2160 }
+    const vw = window.innerWidth
+    const vh = window.innerHeight
+    const w = platform() === 'other' ? Math.min(vw, vh / 2) : vw
+    const scale = w / 1080
+    return { w, h: vh, scale, virtualH: vh / scale }
   }
-  return d.toLocaleDateString('ko-KR', { year: 'numeric', month: 'short', day: 'numeric' })
+  const [s, setS] = useState(calc)
+  useEffect(() => {
+    const on = () => setS(calc())
+    window.addEventListener('resize', on)
+    return () => window.removeEventListener('resize', on)
+  }, [])
+  return s
 }
 
 export default function App() {
-  const [memos, setMemos] = useState<Memo[]>([])
-  const [loaded, setLoaded] = useState(false)
-  const [query, setQuery] = useState('')
-  const [editingId, setEditingId] = useState<string | null>(null)
-  const bodyRef = useRef<HTMLTextAreaElement>(null)
+  const stage = useStage()
+  const stageRef = useRef<HTMLDivElement>(null)
+  // 검수용: ?nosplash 이면 스플래시 영상을 건너뛴다.
+  const [splash, setSplash] = useState(() => !new URLSearchParams(location.search).has('nosplash'))
+  const [splashFade, setSplashFade] = useState(false)
+  // 상품 받기 팝업: null = 닫힘, { product } = 열림 (튜토리얼 종료 시 product 없음)
+  const [popup, setPopup] = useState<{ product?: ResultProduct } | null>(() => (new URLSearchParams(location.search).get('snap') === 'popup' ? { product: undefined } : null))
+  const splashResolve = useRef<() => void>(() => {})
 
   useEffect(() => {
-    loadMemos().then((list) => {
-      setMemos(list)
-      setLoaded(true)
+    preloadSounds()
+    const el = stageRef.current
+    if (!el) return
+    const splashDone = new Promise<void>((r) => (splashResolve.current = r))
+    const tutorial = new Tutorial({
+      stage: el,
+      stageHeight: stage.virtualH,
+      splashDone,
+      onFinish: (product) => setPopup({ product }),
     })
+    void tutorial.init()
+    if (new URLSearchParams(location.search).has('nosplash')) splashResolve.current()
+    return () => tutorial.dispose()
+    // 화면 크기가 바뀌어도 진행 중인 튜토리얼은 다시 만들지 않는다.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
-  useEffect(() => {
-    if (loaded) saveMemos(memos)
-  }, [memos, loaded])
-
-  const visible = useMemo(() => {
-    const q = query.trim().toLowerCase()
-    return memos
-      .filter((m) => !q || m.title.toLowerCase().includes(q) || m.body.toLowerCase().includes(q))
-      .sort((a, b) => Number(b.pinned) - Number(a.pinned) || b.updatedAt - a.updatedAt)
-  }, [memos, query])
-
-  const editing = memos.find((m) => m.id === editingId) ?? null
-
-  function createMemo() {
-    const memo: Memo = { id: newId(), title: '', body: '', pinned: false, updatedAt: Date.now() }
-    setMemos((prev) => [memo, ...prev])
-    setEditingId(memo.id)
-  }
-
-  function updateMemo(id: string, patch: Partial<Memo>) {
-    setMemos((prev) => prev.map((m) => (m.id === id ? { ...m, ...patch, updatedAt: Date.now() } : m)))
-  }
-
-  function togglePin(id: string) {
-    setMemos((prev) => prev.map((m) => (m.id === id ? { ...m, pinned: !m.pinned } : m)))
-  }
-
-  function deleteMemo(id: string) {
-    if (!confirm('이 메모를 삭제할까요?')) return
-    setMemos((prev) => prev.filter((m) => m.id !== id))
-    if (editingId === id) setEditingId(null)
-  }
-
-  function closeEditor() {
-    // 제목과 내용이 모두 비어 있으면 남기지 않는다.
-    if (editing && !editing.title.trim() && !editing.body.trim()) {
-      setMemos((prev) => prev.filter((m) => m.id !== editing.id))
-    }
-    setEditingId(null)
-  }
-
-  if (editing) {
-    return (
-      <div className="app">
-        <header className="bar">
-          <button className="icon-btn" onClick={closeEditor} aria-label="뒤로">‹</button>
-          <span className="bar-meta">{formatDate(editing.updatedAt)}</span>
-          <div className="bar-actions">
-            <button className={'icon-btn' + (editing.pinned ? ' on' : '')} onClick={() => togglePin(editing.id)} aria-label="고정">★</button>
-            <button className="icon-btn danger" onClick={() => deleteMemo(editing.id)} aria-label="삭제">🗑</button>
-          </div>
-        </header>
-        <main className="editor">
-          <input
-            className="editor-title"
-            placeholder="제목"
-            value={editing.title}
-            autoFocus={!editing.title && !editing.body}
-            onChange={(e) => updateMemo(editing.id, { title: e.target.value })}
-            onKeyDown={(e) => {
-              if (e.key === 'Enter') {
-                e.preventDefault()
-                bodyRef.current?.focus()
-              }
-            }}
-          />
-          <textarea
-            ref={bodyRef}
-            className="editor-body"
-            placeholder="내용을 입력하세요"
-            value={editing.body}
-            onChange={(e) => updateMemo(editing.id, { body: e.target.value })}
-          />
-        </main>
-      </div>
-    )
+  // Splash.cs: 영상 종료 → 0.5s 페이드 → is_splash false
+  const endSplash = () => {
+    if (splashFade) return
+    setSplashFade(true)
+    setTimeout(() => {
+      setSplash(false)
+      splashResolve.current()
+    }, 500)
   }
 
   return (
-    <div className="app">
-      <header className="bar">
-        <h1>테스트메모</h1>
-        <span className="bar-meta">{memos.length}개</span>
-      </header>
-      <div className="search">
-        <input type="search" placeholder="검색" value={query} onChange={(e) => setQuery(e.target.value)} />
-      </div>
-      <main className="list">
-        {loaded && visible.length === 0 && (
-          <p className="empty">{query ? '검색 결과가 없습니다.' : '메모가 없습니다.\n아래 + 버튼으로 추가하세요.'}</p>
+    <div className="viewport" onPointerDown={unlockAudio}>
+      <div
+        className="frame"
+        style={{ width: stage.w, height: stage.h }}
+      >
+        <div
+          ref={stageRef}
+          className="stage"
+          style={{ width: 1080, height: stage.virtualH, transform: `scale(${stage.scale})` }}
+        />
+        {splash && (
+          <div className={'splash' + (splashFade ? ' fade' : '')}>
+            <video
+              src={assetUrl('unity/video/Video_Splash.mp4')}
+              autoPlay
+              muted
+              playsInline
+              preload="auto"
+              onEnded={endSplash}
+              onError={endSplash}
+              onStalled={() => setTimeout(endSplash, 8000)}
+            />
+          </div>
         )}
-        {visible.map((m) => (
-          <button key={m.id} className="card" onClick={() => setEditingId(m.id)}>
-            <div className="card-head">
-              <strong>{m.title.trim() || m.body.split('\n')[0] || '새 메모'}</strong>
-              {m.pinned && <span className="pin">★</span>}
-            </div>
-            <p className="card-body">{m.title.trim() ? m.body : m.body.split('\n').slice(1).join(' ')}</p>
-            <span className="card-date">{formatDate(m.updatedAt)}</span>
-          </button>
-        ))}
-      </main>
-      <button className="fab" onClick={createMemo} aria-label="새 메모">+</button>
+        {popup && <StorePopup platform={platform()} />}
+      </div>
     </div>
   )
 }

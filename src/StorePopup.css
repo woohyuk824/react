@@ -1,0 +1,120 @@
+/* 상품 받기 안내 팝업 — 캐치유 보라(#614AD8) 기반 */
+.sp-backdrop {
+  position: absolute;
+  inset: 0;
+  z-index: 300;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: rgba(16, 10, 34, 0);
+  backdrop-filter: blur(0px);
+  -webkit-backdrop-filter: blur(0px);
+  transition: background 0.26s ease, backdrop-filter 0.26s ease;
+  font-family: Pretendard, -apple-system, sans-serif;
+  letter-spacing: -0.02em;
+}
+.sp-backdrop.on {
+  background: rgba(16, 10, 34, 0.62);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+.sp-card {
+  position: relative;
+  width: min(100%, 360px);
+  border-radius: 28px;
+  padding: 28px 22px 18px;
+  text-align: center;
+  color: #1c1a24;
+  background:
+    radial-gradient(120% 70% at 50% 0%, #efe9ff 0%, rgba(239, 233, 255, 0) 60%),
+    #ffffff;
+  box-shadow:
+    0 24px 60px rgba(40, 20, 110, 0.35),
+    0 0 0 1px rgba(97, 74, 216, 0.08);
+  transform: translateY(28px) scale(0.96);
+  opacity: 0;
+  transition: transform 0.34s cubic-bezier(0.2, 0.9, 0.25, 1.15), opacity 0.22s ease;
+}
+.sp-backdrop.on .sp-card {
+  transform: none;
+  opacity: 1;
+}
+
+
+.sp-hero {
+  position: relative;
+  height: 150px;
+  margin: 0 auto 6px;
+  display: grid;
+  place-items: center;
+}
+.sp-glow {
+  position: absolute;
+  width: 170px;
+  height: 170px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 242, 209, 0.95) 0%, rgba(176, 153, 255, 0.55) 42%, rgba(176, 153, 255, 0) 70%);
+  animation: sp-breathe 2.8s ease-in-out infinite;
+}
+.sp-appicon-lg { position: relative; width: 96px; height: 96px; border-radius: 22px; box-shadow: 0 10px 24px rgba(60, 30, 160, 0.35); }
+
+@keyframes sp-breathe { 0%, 100% { transform: scale(0.94); opacity: 0.85 } 50% { transform: scale(1.04); opacity: 1 } }
+
+
+/* 한글은 단어 단위로 줄바꿈하고, 줄 길이를 고르게 맞춘다. */
+.sp-title, .sp-desc {
+  word-break: keep-all;
+  overflow-wrap: break-word;
+  text-wrap: balance;
+}
+.sp-title {
+  margin: 10px auto 8px;
+  max-width: 260px;
+  font-size: 21px;
+  line-height: 1.35;
+  font-weight: 800;
+  color: #17141f;
+}
+.sp-desc { margin: 0 auto 20px; max-width: 250px; font-size: 14px; line-height: 1.5; color: #77748a; }
+
+.sp-actions { display: flex; flex-direction: column; gap: 9px; }
+.sp-store {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  height: 52px;
+  border-radius: 16px;
+  font-size: 16px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: transform 0.12s ease, filter 0.12s ease;
+}
+.sp-store:active { transform: scale(0.98); }
+.sp-store.primary {
+  color: #fff;
+  background: linear-gradient(135deg, #8a6bff 0%, #614ad8 55%, #4b34c2 100%);
+  box-shadow: 0 8px 20px rgba(97, 74, 216, 0.38), inset 0 1px 0 rgba(255, 255, 255, 0.25);
+}
+.sp-store.secondary {
+  height: 46px;
+  color: #4a3fa0;
+  background: #f4f1ff;
+}
+.sp-store-icon { width: 22px; height: 22px; display: grid; place-items: center; }
+.sp-store-icon svg { width: 100%; height: 100%; }
+
+.sp-footer {
+  margin-top: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  color: #a7a3b8;
+}
+.sp-footer img { width: 16px; height: 16px; border-radius: 4px; }

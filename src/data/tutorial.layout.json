@@ -1,0 +1,6885 @@
+{
+ "name": "UI_TutorialDrawing",
+ "active": true,
+ "aMin": [
+  0.5,
+  0.5
+ ],
+ "aMax": [
+  0.5,
+  0.5
+ ],
+ "pos": [
+  0,
+  0
+ ],
+ "size": [
+  1080,
+  2160
+ ],
+ "pivot": [
+  0.5,
+  0.5
+ ],
+ "canvas": {
+  "renderMode": 2,
+  "overrideSorting": false
+ },
+ "components": [
+  "Canvas",
+  "GraphicRaycaster",
+  "UI_TutorialDrawing"
+ ],
+ "props": {
+  "UI_TutorialDrawing": {
+   "animationType": 4,
+   "closeType": 4,
+   "layerType": 2,
+   "objectSpace": null,
+   "rawImage_Render": null,
+   "camera_texture": null,
+   "aniTime": 0.3,
+   "raycastAlwaysOn": 0,
+   "graphicRaycaster": null,
+   "mat_productMotion": "Assets/_Material/Play/Mat_PlayMainProductMotion.mat",
+   "dummyFx": "Assets/_Effects/SurfaceFx/SurfaceFx_DrawingGoldShine.prefab",
+   "clawOpen": "unity/_Images/Content/PlayMain/PlayMainDrawing/Theme/Main/Image_DrawClawOpen.png",
+   "resultVideo": "Assets/_Video/Video_Drawing.mp4"
+  }
+ },
+ "refs": {
+  "UI_TutorialDrawing.clawOpen": "unity/_Images/Content/PlayMain/PlayMainDrawing/Theme/Main/Image_DrawClawOpen.png"
+ },
+ "children": [
+  {
+   "name": "Image_BG",
+   "active": true,
+   "aMin": [
+    0,
+    0
+   ],
+   "aMax": [
+    1,
+    1
+   ],
+   "pos": [
+    0,
+    0
+   ],
+   "size": [
+    0,
+    0
+   ],
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "image": {
+    "src": "unity/_Images/Content/PlayMain/Image_PlayMainEmpty.jpg",
+    "type": "Simple",
+    "color": "#FFFFFF",
+    "alpha": 1,
+    "ppuMul": 1,
+    "texSize": [
+     2048,
+     1024
+    ],
+    "srcSize": [
+     4320,
+     2160
+    ],
+    "preserveAspect": false,
+    "fillCenter": true,
+    "raycast": true
+   },
+   "components": [
+    "CanvasRenderer",
+    "Image"
+   ]
+  },
+  {
+   "name": "GO_Machine",
+   "active": true,
+   "aMin": [
+    0.5,
+    0.5
+   ],
+   "aMax": [
+    0.5,
+    0.5
+   ],
+   "pos": [
+    0,
+    0
+   ],
+   "size": [
+    1080,
+    2160
+   ],
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "image": {
+    "src": "unity/_Images/Content/PlayMain/PlayMainDrawing/Image_PlayMainDrawBG.jpg",
+    "type": "Simple",
+    "color": "#F1F0F4",
+    "alpha": 1,
+    "ppuMul": 1,
+    "texSize": [
+     1024,
+     2048
+    ],
+    "srcSize": [
+     1080,
+     2160
+    ],
+    "preserveAspect": false,
+    "fillCenter": true
+   },
+   "mask": {
+    "kind": "Mask",
+    "showGraphic": true
+   },
+   "canvasGroup": {
+    "alpha": 1
+   },
+   "components": [
+    "CanvasRenderer",
+    "Image",
+    "Mask",
+    "CanvasGroup",
+    "BackdropFx",
+    "UILayerBlurStack"
+   ],
+   "props": {
+    "BackdropFx": {
+     "duration": 8,
+     "playOnEnable": 1,
+     "previewTarget": null
+    },
+    "UILayerBlurStack": {
+     "panelShader": "Assets/_Effects/ScreenFx/Backdrop.shader",
+     "blurShader": "Assets/_Effects/ScreenFx/UILayerBlurFilter.shader",
+     "maxSize": 512,
+     "updateRate": 30,
+     "onChangeOnly": 0
+    }
+   },
+   "children": [
+    {
+     "name": "Button_PlayMy",
+     "active": true,
+     "aMin": [
+      0.5,
+      1
+     ],
+     "aMax": [
+      0.5,
+      1
+     ],
+     "pos": [
+      0,
+      -184
+     ],
+     "size": [
+      978,
+      1374
+     ],
+     "pivot": [
+      0.5,
+      1
+     ],
+     "image": {
+      "src": "unity/_Images/AX/Circles/Circle_@_80x80_-_Clean.png",
+      "type": "Sliced",
+      "color": "#FFFFFF",
+      "alpha": 0.0039,
+      "ppuMul": 1,
+      "border": [
+       40,
+       40,
+       40,
+       40
+      ],
+      "texSize": [
+       80,
+       80
+      ],
+      "preserveAspect": false,
+      "fillCenter": true
+     },
+     "mask": {
+      "kind": "Mask",
+      "showGraphic": false
+     },
+     "button": {
+      "transition": 0,
+      "interactable": false
+     },
+     "components": [
+      "CanvasRenderer",
+      "Image",
+      "Mask",
+      "Button"
+     ],
+     "children": [
+      {
+       "name": "Image_Window",
+       "active": true,
+       "aMin": [
+        0.5,
+        0.5
+       ],
+       "aMax": [
+        0.5,
+        0.5
+       ],
+       "pos": [
+        0,
+        0
+       ],
+       "size": [
+        978,
+        1374
+       ],
+       "pivot": [
+        0.5,
+        0.5
+       ],
+       "image": {
+        "src": "unity/_Images/Content/PlayMain/PlayMainDrawing/Theme/Main/Image_PlayMainDrawInBG.jpg",
+        "type": "Simple",
+        "color": "#FFFFFF",
+        "alpha": 1,
+        "ppuMul": 1,
+        "texSize": [
+         978,
+         1374
+        ],
+        "preserveAspect": false,
+        "fillCenter": true
+       },
+       "components": [
+        "CanvasRenderer",
+        "Image"
+       ],
+       "children": [
+        {
+         "name": "Motion",
+         "active": true,
+         "aMin": [
+          0,
+          0
+         ],
+         "aMax": [
+          1,
+          1
+         ],
+         "pos": [
+          0,
+          173.4998
+         ],
+         "size": [
+          102,
+          20.9998
+         ],
+         "pivot": [
+          0.5,
+          0.5
+         ],
+         "image": {
+          "src": null,
+          "type": "Simple",
+          "color": "#FFFFFF",
+          "alpha": 1,
+          "ppuMul": 1,
+          "preserveAspect": false,
+          "fillCenter": true
+         },
+         "mask": {
+          "kind": "Mask",
+          "showGraphic": false
+         },
+         "components": [
+          "CanvasRenderer",
+          "Image",
+          "Mask"
+         ],
+         "children": [
+          {
+           "name": "RT_Claw",
+           "active": true,
+           "aMin": [
+            0.5,
+            1
+           ],
+           "aMax": [
+            0.5,
+            1
+           ],
+           "pos": [
+            -210,
+            -412
+           ],
+           "size": [
+            380,
+            380
+           ],
+           "pivot": [
+            0.5,
+            1
+           ],
+           "components": [],
+           "children": [
+            {
+             "name": "Image_Box",
+             "active": true,
+             "aMin": [
+              0.5,
+              1
+             ],
+             "aMax": [
+              0.5,
+              1
+             ],
+             "pos": [
+              0,
+              428
+             ],
+             "size": [
+              428,
+              428
+             ],
+             "pivot": [
+              0.5,
+              1
+             ],
+             "image": {
+              "src": "unity/_Images/Content/PlayMain/PlayMainDrawing/Image_PlayMainDrawClawBox.png",
+              "type": "Simple",
+              "color": "#FFFFFF",
+              "alpha": 1,
+              "ppuMul": 1,
+              "texSize": [
+               512,
+               512
+              ],
+              "preserveAspect": false,
+              "fillCenter": true
+             },
+             "components": [
+              "CanvasRenderer",
+              "Image"
+             ]
+            },
+            {
+             "name": "RT_ClawDown",
+             "active": true,
+             "aMin": [
+              0.5,
+              1
+             ],
+             "aMax": [
+              0.5,
+              1
+             ],
+             "pos": [
+              0,
+              0
+             ],
+             "size": [
+              380,
+              380
+             ],
+             "pivot": [
+              0.5,
+              1
+             ],
+             "components": [],
+             "children": [
+              {
+               "name": "Image_Line",
+               "active": true,
+               "aMin": [
+                0,
+                0
+               ],
+               "aMax": [
+                0,
+                0
+               ],
+               "pos": [
+                190,
+                372.2
+               ],
+               "size": [
+                6,
+                2160
+               ],
+               "pivot": [
+                0,
+                0
+               ],
+               "image": {
+                "src": "unity/_Images/Content/PlayMain/PlayMainDrawing/Theme/Main/Image_DrawClawLine.png",
+                "type": "Simple",
+                "color": "#FFFFFF",
+                "alpha": 1,
+                "ppuMul": 1,
+                "texSize": [
+                 6,
+                 2048
+                ],
+                "srcSize": [
+                 6,
+                 2160
+                ],
+                "preserveAspect": false,
+                "fillCenter": true
+               },
+               "components": [
+                "CanvasRenderer",
+                "Image"
+               ]
+              },
+              {
+               "name": "Particle",
+               "active": false,
+               "aMin": [
+                0.5,
+                0.5
+               ],
+               "aMax": [
+                0.5,
+                0.5
+               ],
+               "pos": [
+                0,
+                0
+               ],
+               "size": [
+                100,
+                100
+               ],
+               "pivot": [
+                0.5,
+                0.5
+               ],
+               "scale": [
+                5.454,
+                5.454
+               ],
+               "components": [
+                "CanvasRenderer",
+                "ParticleImage"
+               ],
+               "refs": {
+                "ParticleImage.m_Sprite": "unity/_Images/Effect/Effect_UpLightA.png"
+               }
+              },
+              {
+               "name": "PI_Claw",
+               "active": false,
+               "aMin": [
+                0.5,
+                0.5
+               ],
+               "aMax": [
+                0.5,
+                0.5
+               ],
+               "pos": [
+                0,
+                0
+               ],
+               "size": [
+                100,
+                100
+               ],
+               "pivot": [
+                0.5,
+                0.5
+               ],
+               "scale": [
+                3,
+                3
+               ],
+               "components": [
+                "CanvasRenderer",
+                "ParticleImage"
+               ],
+               "refs": {
+                "ParticleImage.m_Sprite": "unity/_Images/Effect/Effect_SliderEnd.png"
+               },
+               "children": [
+                {
+                 "name": "ParticleImage_",
+                 "active": true,
+                 "aMin": [
+                  0.5,
+                  0.5
+                 ],
+                 "aMax": [
+                  0.5,
+                  0.5
+                 ],
+                 "pos": [
+                  10,
+                  0
+                 ],
+                 "size": [
+                  100,
+                  100
+                 ],
+                 "pivot": [
+                  0.5,
+                  0.5
+                 ],
+                 "rotZ": -10,
+                 "components": [
+                  "CanvasRenderer",
+                  "ParticleImage"
+                 ],
+                 "refs": {
+                  "ParticleImage.m_Sprite": "unity/_Images/Effect/Effect_SliderEnd.png"
+                 }
+                },
+                {
+                 "name": "ParticleImage_",
+                 "active": true,
+                 "aMin": [
+                  0.5,
+                  0.5
+                 ],
+                 "aMax": [
+                  0.5,
+                  0.5
+                 ],
+                 "pos": [
+                  -10,
+                  0
+                 ],
+                 "size": [
+                  100,
+                  100
+                 ],
+                 "pivot": [
+                  0.5,
+                  0.5
+                 ],
+                 "rotZ": 10,
+                 "components": [
+                  "CanvasRenderer",
+                  "ParticleImage"
+                 ],
+                 "refs": {
+                  "ParticleImage.m_Sprite": "unity/_Images/Effect/Effect_SliderEnd.png"
+                 }
+                },
+                {
+                 "name": "ParticleImage_",
+                 "active": true,
+                 "aMin": [
+                  0.5,
+                  0.5
+                 ],
+                 "aMax": [
+                  0.5,
+                  0.5
+                 ],
+                 "pos": [
+                  0,
+                  32
+                 ],
+                 "size": [
+                  100,
+                  100
+                 ],
+                 "pivot": [
+                  0.5,
+                  0.5
+                 ],
+                 "components": [
+                  "CanvasRenderer",
+                  "ParticleImage"
+                 ],
+                 "refs": {
+                  "ParticleImage.m_Sprite": "unity/_Images/Effect/Effect_EndSlider.png"
+                 }
+                },
+                {
+                 "name": "ParticleImage_",
+                 "active": true,
+                 "aMin": [
+                  0.5,
+                  0.5
+                 ],
+                 "aMax": [
+                  0.5,
+                  0.5
+                 ],
+                 "pos": [
+                  0,
+                  0
+                 ],
+                 "size": [
+                  100,
+                  100
+                 ],
+                 "pivot": [
+                  0.5,
+                  0.5
+                 ],
+                 "rotZ": -26,
+                 "components": [
+                  "CanvasRenderer",
+                  "ParticleImage"
+                 ],
+                 "refs": {
+                  "ParticleImage.m_Sprite": "unity/_Images/Effect/Effect_SliderEnd.png"
+                 },
+                 "children": [
+                  {
+                   "name": "ParticleImage_EndSlider",
+                   "active": true,
+                   "aMin": [
+                    0.5,
+                    0.5
+                   ],
+                   "aMax": [
+                    0.5,
+                    0.5
+                   ],
+                   "pos": [
+                    10,
+                    0
+                   ],
+                   "size": [
+                    100,
+                    100
+                   ],
+                   "pivot": [
+                    0.5,
+                    0.5
+                   ],
+                   "rotZ": -10,
+                   "components": [
+                    "CanvasRenderer",
+                    "ParticleImage"
+                   ],
+                   "refs": {
+                    "ParticleImage.m_Sprite": "unity/_Images/Effect/Effect_SliderEnd.png"
+                   }
+                  },
+                  {
+                   "name": "ParticleImage_EndSlider",
+                   "active": true,
+                   "aMin": [
+                    0.5,
+                    0.5
+                   ],
+                   "aMax": [
+                    0.5,
+                    0.5
+                   ],
+                   "pos": [
+                    -10,
+                    0
+                   ],
+                   "size": [
+                    100,
+                    100
+                   ],
+                   "pivot": [
+                    0.5,
+                    0.5
+                   ],
+                   "rotZ": 10,
+                   "components": [
+                    "CanvasRenderer",
+                    "ParticleImage"
+                   ],
+                   "refs": {
+                    "ParticleImage.m_Sprite": "unity/_Images/Effect/Effect_SliderEnd.png"
+                   }
+                  },
+                  {
+                   "name": "ParticleImage_EndPoint",
+                   "active": true,
+                   "aMin": [
+                    0.5,
+                    0.5
+                   ],
+                   "aMax": [
+                    0.5,
+                    0.5
+                   ],
+                   "pos": [
+                    0,
+                    32
+                   ],
+                   "size": [
+                    100,
+                    100
+                   ],
+                   "pivot": [
+                    0.5,
+                    0.5
+                   ],
+                   "components": [
+                    "CanvasRenderer",
+                    "ParticleImage"
+                   ],
+                   "refs": {
+                    "ParticleImage.m_Sprite": "unity/_Images/Effect/Effect_EndSlider.png"
+                   }
+                  }
+                 ]
+                },
+                {
+                 "name": "ParticleImage_",
+                 "active": true,
+                 "aMin": [
+                  0.5,
+                  0.5
+                 ],
+                 "aMax": [
+                  0.5,
+                  0.5
+                 ],
+                 "pos": [
+                  0,
+                  0
+                 ],
+                 "size": [
+                  100,
+                  100
+                 ],
+                 "pivot": [
+                  0.5,
+                  0.5
+                 ],
+                 "rotZ": 26,
+                 "components": [
+                  "CanvasRenderer",
+                  "ParticleImage"
+                 ],
+                 "refs": {
+                  "ParticleImage.m_Sprite": "unity/_Images/Effect/Effect_SliderEnd.png"
+                 },
+                 "children": [
+                  {
+                   "name": "ParticleImage_EndSlider",
+                   "active": true,
+                   "aMin": [
+                    0.5,
+                    0.5
+                   ],
+                   "aMax": [
+                    0.5,
+                    0.5
+                   ],
+                   "pos": [
+                    10,
+                    0
+                   ],
+                   "size": [
+                    100,
+                    100
+                   ],
+                   "pivot": [
+                    0.5,
+                    0.5
+                   ],
+                   "rotZ": -10,
+                   "components": [
+                    "CanvasRenderer",
+                    "ParticleImage"
+                   ],
+                   "refs": {
+                    "ParticleImage.m_Sprite": "unity/_Images/Effect/Effect_SliderEnd.png"
+                   }
+                  },
+                  {
+                   "name": "ParticleImage_EndSlider",
+                   "active": true,
+                   "aMin": [
+                    0.5,
+                    0.5
+                   ],
+                   "aMax": [
+                    0.5,
+                    0.5
+                   ],
+                   "pos": [
+                    -10,
+                    0
+                   ],
+                   "size": [
+                    100,
+                    100
+                   ],
+                   "pivot": [
+                    0.5,
+                    0.5
+                   ],
+                   "rotZ": 10,
+                   "components": [
+                    "CanvasRenderer",
+                    "ParticleImage"
+                   ],
+                   "refs": {
+                    "ParticleImage.m_Sprite": "unity/_Images/Effect/Effect_SliderEnd.png"
+                   }
+                  },
+                  {
+                   "name": "ParticleImage_EndPoint",
+                   "active": true,
+                   "aMin": [
+                    0.5,
+                    0.5
+                   ],
+                   "aMax": [
+                    0.5,
+                    0.5
+                   ],
+                   "pos": [
+                    0,
+                    32
+                   ],
+                   "size": [
+                    100,
+                    100
+                   ],
+                   "pivot": [
+                    0.5,
+                    0.5
+                   ],
+                   "components": [
+                    "CanvasRenderer",
+                    "ParticleImage"
+                   ],
+                   "refs": {
+                    "ParticleImage.m_Sprite": "unity/_Images/Effect/Effect_EndSlider.png"
+                   }
+                  }
+                 ]
+                }
+               ]
+              },
+              {
+               "name": "RT_ClawHand",
+               "active": true,
+               "aMin": [
+                0,
+                1
+               ],
+               "aMax": [
+                0,
+                1
+               ],
+               "pos": [
+                192.66,
+                0
+               ],
+               "size": [
+                380,
+                380
+               ],
+               "pivot": [
+                0.507,
+                1
+               ],
+               "components": [],
+               "children": [
+                {
+                 "name": "PI_Claw",
+                 "active": true,
+                 "aMin": [
+                  0.5,
+                  0.5
+                 ],
+                 "aMax": [
+                  0.5,
+                  0.5
+                 ],
+                 "pos": [
+                  0,
+                  -175
+                 ],
+                 "size": [
+                  100,
+                  100
+                 ],
+                 "pivot": [
+                  0.5,
+                  0.5
+                 ],
+                 "components": [
+                  "CanvasRenderer",
+                  "ParticleImage"
+                 ],
+                 "refs": {
+                  "ParticleImage.m_Sprite": "unity/_Images/Effect/Effect_Light.png"
+                 },
+                 "children": [
+                  {
+                   "name": "Particle Image",
+                   "active": true,
+                   "aMin": [
+                    0.5,
+                    0.5
+                   ],
+                   "aMax": [
+                    0.5,
+                    0.5
+                   ],
+                   "pos": [
+                    0,
+                    0
+                   ],
+                   "size": [
+                    100,
+                    100
+                   ],
+                   "pivot": [
+                    0.5,
+                    0.5
+                   ],
+                   "components": [
+                    "CanvasRenderer",
+                    "ParticleImage"
+                   ],
+                   "refs": {
+                    "ParticleImage.m_Sprite": "unity/_Images/Effect/Effect_Star.png"
+                   }
+                  }
+                 ]
+                },
+                {
+                 "name": "GO_ResultEvent",
+                 "active": false,
+                 "aMin": [
+                  0.5,
+                  0.5
+                 ],
+                 "aMax": [
+                  0.5,
+                  0.5
+                 ],
+                 "pos": [
+                  0,
+                  -233
+                 ],
+                 "size": [
+                  286,
+                  286
+                 ],
+                 "pivot": [
+                  0.5,
+                  0.5
+                 ],
+                 "canvasGroup": {
+                  "alpha": 1
+                 },
+                 "button": {
+                  "transition": 0,
+                  "interactable": false
+                 },
+                 "image": {
+                  "src": null,
+                  "type": "Simple",
+                  "color": "#FFFFFF",
+                  "alpha": 0,
+                  "ppuMul": 1,
+                  "preserveAspect": false,
+                  "fillCenter": true
+                 },
+                 "components": [
+                  "CanvasGroup",
+                  "Button",
+                  "CanvasRenderer",
+                  "Image"
+                 ],
+                 "children": [
+                  {
+                   "name": "CG_Info",
+                   "active": true,
+                   "aMin": [
+                    0,
+                    0
+                   ],
+                   "aMax": [
+                    1,
+                    1
+                   ],
+                   "pos": [
+                    0,
+                    0
+                   ],
+                   "size": [
+                    0,
+                    0
+                   ],
+                   "pivot": [
+                    0.5,
+                    0.5
+                   ],
+                   "canvasGroup": {
+                    "alpha": 1,
+                    "interactable": true,
+                    "blocksRaycasts": false
+                   },
+                   "components": [
+                    "CanvasGroup"
+                   ],
+                   "children": [
+                    {
+                     "name": "RawImage",
+                     "active": true,
+                     "aMin": [
+                      0,
+                      0
+                     ],
+                     "aMax": [
+                      1,
+                      1
+                     ],
+                     "pos": [
+                      0,
+                      0
+                     ],
+                     "size": [
+                      0,
+                      0
+                     ],
+                     "pivot": [
+                      0.5,
+                      0.5
+                     ],
+                     "rawImage": {
+                      "src": "unity/_Images/AX/Default_Dummy.png",
+                      "texSize": [
+                       512,
+                       512
+                      ],
+                      "color": "#FFFFFF",
+                      "alpha": 1,
+                      "uvRect": [
+                       0,
+                       0,
+                       1,
+                       1
+                      ]
+                     },
+                     "mask": {
+                      "kind": "Mask",
+                      "showGraphic": true
+                     },
+                     "components": [
+                      "CanvasRenderer",
+                      "RawImage",
+                      "Mask"
+                     ],
+                     "children": [
+                      {
+                       "name": "RT_Shine",
+                       "active": true,
+                       "aMin": [
+                        0.5,
+                        0.5
+                       ],
+                       "aMax": [
+                        0.5,
+                        0.5
+                       ],
+                       "pos": [
+                        -200,
+                        200
+                       ],
+                       "size": [
+                        600,
+                        150
+                       ],
+                       "pivot": [
+                        0.5,
+                        0.5
+                       ],
+                       "rotZ": 45,
+                       "image": {
+                        "src": null,
+                        "type": "Simple",
+                        "color": "#FFFFFF",
+                        "alpha": 1,
+                        "ppuMul": 1,
+                        "preserveAspect": false,
+                        "fillCenter": true
+                       },
+                       "components": [
+                        "CanvasRenderer",
+                        "Image",
+                        "FillGradientFilter"
+                       ],
+                       "props": {
+                        "FillGradientFilter": {
+                         "_strength": 1,
+                         "_renderSpace": 0,
+                         "_gradientShape": 2,
+                         "_diagonalFlip": 0,
+                         "_gradientLinearAngle": 0,
+                         "_gradientCenterX": 0,
+                         "_gradientCenterY": 0,
+                         "_gradientRadius": 0.5,
+                         "_gradient": {
+                          "serializedVersion": 2,
+                          "key0": {
+                           "r": 1,
+                           "g": 1,
+                           "b": 1,
+                           "a": 0
+                          },
+                          "key1": {
+                           "r": 1,
+                           "g": 1,
+                           "b": 1,
+                           "a": 0.902
+                          },
+                          "key2": {
+                           "r": 0.6,
+                           "g": 0.6,
+                           "b": 0.6,
+                           "a": 1
+                          },
+                          "key3": {
+                           "r": 0.6,
+                           "g": 0.6,
+                           "b": 0.6,
+                           "a": 0.902
+                          },
+                          "key4": {
+                           "r": 0.6,
+                           "g": 0.6,
+                           "b": 0.6,
+                           "a": 0
+                          },
+                          "key5": {
+                           "r": 0,
+                           "g": 0,
+                           "b": 0,
+                           "a": 0
+                          },
+                          "key6": {
+                           "r": 0,
+                           "g": 0,
+                           "b": 0,
+                           "a": 0
+                          },
+                          "key7": {
+                           "r": 0,
+                           "g": 0,
+                           "b": 0,
+                           "a": 0
+                          },
+                          "ctime0": 0,
+                          "ctime1": 65535,
+                          "ctime2": 65535,
+                          "ctime3": 65535,
+                          "ctime4": 65535,
+                          "ctime5": 0,
+                          "ctime6": 0,
+                          "ctime7": 0,
+                          "atime0": 0,
+                          "atime1": 26214,
+                          "atime2": 32768,
+                          "atime3": 39321,
+                          "atime4": 65535,
+                          "atime5": 65535,
+                          "atime6": 0,
+                          "atime7": 0,
+                          "m_Mode": 0,
+                          "m_ColorSpace": 0,
+                          "m_NumColorKeys": 2,
+                          "m_NumAlphaKeys": 5
+                         },
+                         "_gradientLerp": 1,
+                         "_gradientColorSpace": 0,
+                         "_gradientWrap": 0,
+                         "_gradientDither": 0,
+                         "_gradientScale": 1,
+                         "_gradientScaleCenter": 0.5,
+                         "_gradientOffset": 0,
+                         "_scrollSpeed": 0,
+                         "_blendMode": 0
+                        }
+                       }
+                      }
+                     ]
+                    },
+                    {
+                     "name": "Message",
+                     "active": true,
+                     "aMin": [
+                      0.5,
+                      0
+                     ],
+                     "aMax": [
+                      0.5,
+                      0
+                     ],
+                     "pos": [
+                      0,
+                      30
+                     ],
+                     "size": [
+                      220.15,
+                      54
+                     ],
+                     "pivot": [
+                      0.5,
+                      0
+                     ],
+                     "image": {
+                      "src": "unity/_Images/AX/Circles/Circle_@_60x60_-_Clean.png",
+                      "type": "Sliced",
+                      "color": "#FBFBFB",
+                      "alpha": 0.698,
+                      "ppuMul": 1.15,
+                      "border": [
+                       30,
+                       30,
+                       30,
+                       30
+                      ],
+                      "texSize": [
+                       60,
+                       60
+                      ],
+                      "preserveAspect": false,
+                      "fillCenter": true
+                     },
+                     "layoutGroup": {
+                      "kind": "H",
+                      "spacing": 12,
+                      "padding": [
+                       18,
+                       18,
+                       0,
+                       0
+                      ],
+                      "childAlign": 4,
+                      "controlW": true,
+                      "controlH": false,
+                      "expandW": true,
+                      "expandH": true,
+                      "reverse": false
+                     },
+                     "sizeFitter": {
+                      "h": 2,
+                      "v": 0
+                     },
+                     "components": [
+                      "CanvasRenderer",
+                      "Image",
+                      "HorizontalLayoutGroup",
+                      "ContentSizeFitter"
+                     ],
+                     "children": [
+                      {
+                       "name": "Text_Info",
+                       "active": true,
+                       "aMin": [
+                        0,
+                        1
+                       ],
+                       "aMax": [
+                        0,
+                        1
+                       ],
+                       "pos": [
+                        110.075,
+                        -27
+                       ],
+                       "size": [
+                        184.15,
+                        48
+                       ],
+                       "pivot": [
+                        0.5,
+                        0.5
+                       ],
+                       "text": {
+                        "text": "상품 주인공은?",
+                        "weight": "Medium",
+                        "size": 32,
+                        "autoSize": false,
+                        "color": "#614AD8",
+                        "alpha": 1,
+                        "vertexColor": "#FFFFFF",
+                        "vertexAlpha": 1,
+                        "hAlign": "center",
+                        "vAlign": "middle",
+                        "wrap": true,
+                        "overflow": 0,
+                        "lineSpacing": 0,
+                        "charSpacing": 0
+                       },
+                       "components": [
+                        "CanvasRenderer",
+                        "TextMeshProUGUI"
+                       ]
+                      }
+                     ]
+                    }
+                   ]
+                  },
+                  {
+                   "name": "CG_Winner",
+                   "active": true,
+                   "aMin": [
+                    0,
+                    0
+                   ],
+                   "aMax": [
+                    1,
+                    1
+                   ],
+                   "pos": [
+                    0,
+                    0
+                   ],
+                   "size": [
+                    0,
+                    0
+                   ],
+                   "pivot": [
+                    0.5,
+                    0.5
+                   ],
+                   "canvasGroup": {
+                    "alpha": 0,
+                    "interactable": true,
+                    "blocksRaycasts": false
+                   },
+                   "components": [
+                    "CanvasGroup"
+                   ],
+                   "children": [
+                    {
+                     "name": "RawImage_Winner",
+                     "active": true,
+                     "aMin": [
+                      0,
+                      0
+                     ],
+                     "aMax": [
+                      1,
+                      1
+                     ],
+                     "pos": [
+                      0,
+                      0
+                     ],
+                     "size": [
+                      0,
+                      0
+                     ],
+                     "pivot": [
+                      0.5,
+                      0.5
+                     ],
+                     "rawImage": {
+                      "src": "unity/_Images/AX/Default_Dummy.png",
+                      "texSize": [
+                       512,
+                       512
+                      ],
+                      "color": "#FFFFFF",
+                      "alpha": 1,
+                      "uvRect": [
+                       0,
+                       0,
+                       1,
+                       1
+                      ]
+                     },
+                     "components": [
+                      "CanvasRenderer",
+                      "RawImage"
+                     ]
+                    },
+                    {
+                     "name": "Winner",
+                     "active": true,
+                     "aMin": [
+                      0.5,
+                      0
+                     ],
+                     "aMax": [
+                      0.5,
+                      0
+                     ],
+                     "pos": [
+                      0,
+                      30
+                     ],
+                     "size": [
+                      169.39,
+                      54
+                     ],
+                     "pivot": [
+                      0.5,
+                      0
+                     ],
+                     "image": {
+                      "src": "unity/_Images/AX/Circles/Circle_@_60x60_-_Clean.png",
+                      "type": "Sliced",
+                      "color": "#FBFBFB",
+                      "alpha": 0.698,
+                      "ppuMul": 1.15,
+                      "border": [
+                       30,
+                       30,
+                       30,
+                       30
+                      ],
+                      "texSize": [
+                       60,
+                       60
+                      ],
+                      "preserveAspect": false,
+                      "fillCenter": true
+                     },
+                     "layoutGroup": {
+                      "kind": "H",
+                      "spacing": 12,
+                      "padding": [
+                       18,
+                       18,
+                       0,
+                       0
+                      ],
+                      "childAlign": 4,
+                      "controlW": true,
+                      "controlH": false,
+                      "expandW": true,
+                      "expandH": true,
+                      "reverse": false
+                     },
+                     "sizeFitter": {
+                      "h": 2,
+                      "v": 0
+                     },
+                     "components": [
+                      "CanvasRenderer",
+                      "Image",
+                      "HorizontalLayoutGroup",
+                      "ContentSizeFitter"
+                     ],
+                     "children": [
+                      {
+                       "name": "CustomProfileImage",
+                       "active": true,
+                       "aMin": [
+                        0,
+                        1
+                       ],
+                       "aMax": [
+                        0,
+                        1
+                       ],
+                       "pos": [
+                        18,
+                        -7
+                       ],
+                       "size": [
+                        40,
+                        40
+                       ],
+                       "pivot": [
+                        0,
+                        1
+                       ],
+                       "button": {
+                        "transition": 0,
+                        "interactable": false
+                       },
+                       "layoutElement": {
+                        "minW": 40
+                       },
+                       "components": [
+                        "Button",
+                        "LayoutElement"
+                       ],
+                       "children": [
+                        {
+                         "name": "Mask",
+                         "active": true,
+                         "aMin": [
+                          0,
+                          0
+                         ],
+                         "aMax": [
+                          1,
+                          1
+                         ],
+                         "pos": [
+                          0,
+                          0
+                         ],
+                         "size": [
+                          0,
+                          0
+                         ],
+                         "pivot": [
+                          0.5,
+                          0.5
+                         ],
+                         "image": {
+                          "src": "unity/_Images/AX/Circles/Circle_@_1024x1024_-_Clean.png",
+                          "type": "Sliced",
+                          "color": "#FFFFFF",
+                          "alpha": 1,
+                          "ppuMul": 1,
+                          "border": [
+                           512,
+                           512,
+                           512,
+                           512
+                          ],
+                          "texSize": [
+                           1024,
+                           1024
+                          ],
+                          "preserveAspect": false,
+                          "fillCenter": true
+                         },
+                         "mask": {
+                          "kind": "Mask",
+                          "showGraphic": false
+                         },
+                         "components": [
+                          "CanvasRenderer",
+                          "Image",
+                          "Mask"
+                         ],
+                         "children": [
+                          {
+                           "name": "ProfileBgImage",
+                           "active": true,
+                           "aMin": [
+                            0,
+                            0
+                           ],
+                           "aMax": [
+                            1,
+                            1
+                           ],
+                           "pos": [
+                            0,
+                            0
+                           ],
+                           "size": [
+                            0,
+                            0
+                           ],
+                           "pivot": [
+                            0.5,
+                            0.5
+                           ],
+                           "rawImage": {
+                            "src": "unity/_Images/Dummy/Dummy_ProfileBackgroun.png",
+                            "texSize": [
+                             512,
+                             512
+                            ],
+                            "color": "#FFFFFF",
+                            "alpha": 1,
+                            "uvRect": [
+                             0,
+                             0,
+                             1,
+                             1
+                            ]
+                           },
+                           "components": [
+                            "CanvasRenderer",
+                            "RawImage"
+                           ]
+                          },
+                          {
+                           "name": "ProfileCharImage",
+                           "active": true,
+                           "aMin": [
+                            0,
+                            0
+                           ],
+                           "aMax": [
+                            1,
+                            1
+                           ],
+                           "pos": [
+                            0,
+                            0
+                           ],
+                           "size": [
+                            4,
+                            4
+                           ],
+                           "pivot": [
+                            0.5,
+                            0.5
+                           ],
+                           "rawImage": {
+                            "src": "unity/_Images/Dummy/Dummy_ProfileCharacter.png",
+                            "texSize": [
+                             512,
+                             512
+                            ],
+                            "color": "#FFFFFF",
+                            "alpha": 1,
+                            "uvRect": [
+                             0,
+                             0,
+                             1,
+                             1
+                            ]
+                           },
+                           "components": [
+                            "CanvasRenderer",
+                            "RawImage"
+                           ]
+                          }
+                         ]
+                        },
+                        {
+                         "name": "grade",
+                         "active": false,
+                         "aMin": [
+                          1,
+                          0
+                         ],
+                         "aMax": [
+                          1,
+                          0
+                         ],
+                         "pos": [
+                          21.9,
+                          -6.3
+                         ],
+                         "size": [
+                          50,
+                          50
+                         ],
+                         "pivot": [
+                          1,
+                          0
+                         ],
+                         "image": {
+                          "src": "unity/_Images/Content/Image_Grade(Silver).png",
+                          "type": "Simple",
+                          "color": "#FFFFFF",
+                          "alpha": 1,
+                          "ppuMul": 1,
+                          "texSize": [
+                           700,
+                           700
+                          ],
+                          "preserveAspect": false,
+                          "fillCenter": true
+                         },
+                         "components": [
+                          "CanvasRenderer",
+                          "Image"
+                         ]
+                        },
+                        {
+                         "name": "GO_Mine",
+                         "active": false,
+                         "aMin": [
+                          0,
+                          0
+                         ],
+                         "aMax": [
+                          1,
+                          1
+                         ],
+                         "pos": [
+                          0,
+                          0
+                         ],
+                         "size": [
+                          0,
+                          0
+                         ],
+                         "pivot": [
+                          0.5,
+                          0.5
+                         ],
+                         "scale": [
+                          1.12,
+                          1.12
+                         ],
+                         "image": {
+                          "src": "unity/_Images/Content/Image_ProfileMine.png",
+                          "type": "Simple",
+                          "color": "#FFFFFF",
+                          "alpha": 1,
+                          "ppuMul": 1,
+                          "texSize": [
+                           512,
+                           512
+                          ],
+                          "preserveAspect": false,
+                          "fillCenter": true
+                         },
+                         "components": [
+                          "CanvasRenderer",
+                          "Image"
+                         ]
+                        }
+                       ]
+                      },
+                      {
+                       "name": "Text_Winner",
+                       "active": true,
+                       "aMin": [
+                        0,
+                        1
+                       ],
+                       "aMax": [
+                        0,
+                        1
+                       ],
+                       "pos": [
+                        110.695,
+                        -27
+                       ],
+                       "size": [
+                        81.39,
+                        48
+                       ],
+                       "pivot": [
+                        0.5,
+                        0.5
+                       ],
+                       "text": {
+                        "text": "우승자",
+                        "weight": "Medium",
+                        "size": 32,
+                        "autoSize": false,
+                        "color": "#27262B",
+                        "alpha": 1,
+                        "vertexColor": "#FFFFFF",
+                        "vertexAlpha": 1,
+                        "hAlign": "center",
+                        "vAlign": "middle",
+                        "wrap": true,
+                        "overflow": 0,
+                        "lineSpacing": 0,
+                        "charSpacing": 0
+                       },
+                       "components": [
+                        "CanvasRenderer",
+                        "TextMeshProUGUI"
+                       ]
+                      },
+                      {
+                       "name": "Image",
+                       "active": true,
+                       "aMin": [
+                        0,
+                        0
+                       ],
+                       "aMax": [
+                        1,
+                        1
+                       ],
+                       "pos": [
+                        0,
+                        0
+                       ],
+                       "size": [
+                        0,
+                        0
+                       ],
+                       "pivot": [
+                        0.5,
+                        0.5
+                       ],
+                       "image": {
+                        "src": "unity/_Images/AX/Circles/Circle_@_60x60_-_Stroke_2.png",
+                        "type": "Sliced",
+                        "color": "#FBFBFB",
+                        "alpha": 1,
+                        "ppuMul": 1.15,
+                        "border": [
+                         30,
+                         30,
+                         30,
+                         30
+                        ],
+                        "texSize": [
+                         60,
+                         60
+                        ],
+                        "preserveAspect": false,
+                        "fillCenter": true
+                       },
+                       "layoutElement": {
+                        "ignore": true
+                       },
+                       "components": [
+                        "CanvasRenderer",
+                        "Image",
+                        "LayoutElement",
+                        "FillGradientFilter"
+                       ],
+                       "props": {
+                        "FillGradientFilter": {
+                         "_strength": 1,
+                         "_renderSpace": 0,
+                         "_gradientShape": 6,
+                         "_diagonalFlip": 0,
+                         "_gradientLinearAngle": 0,
+                         "_gradientCenterX": 0,
+                         "_gradientCenterY": 0,
+                         "_gradientRadius": 0.5,
+                         "_gradient": {
+                          "serializedVersion": 2,
+                          "key0": {
+                           "r": 0.3804,
+                           "g": 0.2902,
+                           "b": 0.8471,
+                           "a": 1
+                          },
+                          "key1": {
+                           "r": 0.8302,
+                           "g": 0.4026,
+                           "b": 0.8291,
+                           "a": 1
+                          },
+                          "key2": {
+                           "r": 0.3804,
+                           "g": 0.2902,
+                           "b": 0.8471,
+                           "a": 0
+                          },
+                          "key3": {
+                           "r": 0.8208,
+                           "g": 0.723,
+                           "b": 0.1967,
+                           "a": 0
+                          },
+                          "key4": {
+                           "r": 0.8208,
+                           "g": 0.723,
+                           "b": 0.1967,
+                           "a": 0
+                          },
+                          "key5": {
+                           "r": 0,
+                           "g": 0,
+                           "b": 0,
+                           "a": 0
+                          },
+                          "key6": {
+                           "r": 0,
+                           "g": 0,
+                           "b": 0,
+                           "a": 0
+                          },
+                          "key7": {
+                           "r": 0,
+                           "g": 0,
+                           "b": 0,
+                           "a": 0
+                          },
+                          "ctime0": 0,
+                          "ctime1": 32768,
+                          "ctime2": 65535,
+                          "ctime3": 65535,
+                          "ctime4": 65535,
+                          "ctime5": 0,
+                          "ctime6": 0,
+                          "ctime7": 0,
+                          "atime0": 0,
+                          "atime1": 65535,
+                          "atime2": 0,
+                          "atime3": 0,
+                          "atime4": 0,
+                          "atime5": 0,
+                          "atime6": 0,
+                          "atime7": 0,
+                          "m_Mode": 0,
+                          "m_ColorSpace": 0,
+                          "m_NumColorKeys": 3,
+                          "m_NumAlphaKeys": 2
+                         },
+                         "_gradientLerp": 1,
+                         "_gradientColorSpace": 0,
+                         "_gradientWrap": 1,
+                         "_gradientDither": 0,
+                         "_gradientScale": 1,
+                         "_gradientScaleCenter": 0.5,
+                         "_gradientOffset": 0,
+                         "_scrollSpeed": -1,
+                         "_blendMode": 1
+                        }
+                       }
+                      }
+                     ]
+                    }
+                   ]
+                  }
+                 ]
+                },
+                {
+                 "name": "Image_Claw",
+                 "active": true,
+                 "aMin": [
+                  0,
+                  1
+                 ],
+                 "aMax": [
+                  0,
+                  1
+                 ],
+                 "pos": [
+                  192.66,
+                  0
+                 ],
+                 "size": [
+                  380,
+                  380
+                 ],
+                 "pivot": [
+                  0.507,
+                  1
+                 ],
+                 "image": {
+                  "src": "unity/_Images/Content/PlayMain/PlayMainDrawing/Theme/Main/Image_DrawClaw.png",
+                  "type": "Simple",
+                  "color": "#FFFFFF",
+                  "alpha": 1,
+                  "ppuMul": 1,
+                  "texSize": [
+                   512,
+                   512
+                  ],
+                  "preserveAspect": false,
+                  "fillCenter": true
+                 },
+                 "components": [
+                  "CanvasRenderer",
+                  "Image",
+                  "ImageNormalFx"
+                 ],
+                 "props": {
+                  "ImageNormalFx": {
+                   "template": "Assets/_Effects/SurfaceFx/Mat_ImageNormalFx.mat",
+                   "normalTemplate": "Assets/_Effects/ProductFx/Mat_EnhancementInvertedNormal.mat",
+                   "smoothTemplate": "Assets/_Effects/ScreenFx/Mat_Blur.mat",
+                   "normalTexture": null,
+                   "strength": 1,
+                   "lightDirection": {
+                    "x": 0.15,
+                    "y": 0.6,
+                    "z": 0.4
+                   },
+                   "motion": 1,
+                   "motionAmount": 0.5,
+                   "motionDuration": 4
+                  }
+                 }
+                }
+               ]
+              }
+             ]
+            },
+            {
+             "name": "Image_Box",
+             "active": true,
+             "aMin": [
+              0.5,
+              1
+             ],
+             "aMax": [
+              0.5,
+              1
+             ],
+             "pos": [
+              0,
+              428
+             ],
+             "size": [
+              428,
+              428
+             ],
+             "pivot": [
+              0.5,
+              1
+             ],
+             "image": {
+              "src": "unity/_Images/Content/PlayMain/PlayMainDrawing/Image_PlayMainDrawClawBoxFront.png",
+              "type": "Simple",
+              "color": "#FFFFFF",
+              "alpha": 1,
+              "ppuMul": 1,
+              "texSize": [
+               512,
+               512
+              ],
+              "preserveAspect": false,
+              "fillCenter": true
+             },
+             "components": [
+              "CanvasRenderer",
+              "Image"
+             ]
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "name": "RawImage_Dummy03",
+         "active": true,
+         "aMin": [
+          1,
+          0
+         ],
+         "aMax": [
+          1,
+          0
+         ],
+         "pos": [
+          -80,
+          309
+         ],
+         "size": [
+          245,
+          245
+         ],
+         "pivot": [
+          1,
+          0
+         ],
+         "rawImage": {
+          "src": "unity/_Images/Content/PlayMain/PlayMainDrawing/Image_PlayMainDrawDummy05.png",
+          "texSize": [
+           512,
+           512
+          ],
+          "color": "#FFFFFF",
+          "alpha": 1,
+          "uvRect": [
+           0,
+           0,
+           1,
+           1
+          ]
+         },
+         "canvasGroup": {
+          "alpha": 1
+         },
+         "components": [
+          "CanvasRenderer",
+          "RawImage",
+          "CanvasGroup"
+         ]
+        },
+        {
+         "name": "RawImage_Dummy02",
+         "active": true,
+         "aMin": [
+          0,
+          0
+         ],
+         "aMax": [
+          0,
+          0
+         ],
+         "pos": [
+          292,
+          229
+         ],
+         "size": [
+          380,
+          380
+         ],
+         "pivot": [
+          0,
+          0
+         ],
+         "rawImage": {
+          "src": "unity/_Images/Content/PlayMain/PlayMainDrawing/Image_PlayMainDrawDummy01.png",
+          "texSize": [
+           512,
+           512
+          ],
+          "color": "#FFFFFF",
+          "alpha": 1,
+          "uvRect": [
+           0,
+           0,
+           1,
+           1
+          ]
+         },
+         "canvasGroup": {
+          "alpha": 1
+         },
+         "components": [
+          "CanvasRenderer",
+          "RawImage",
+          "CanvasGroup"
+         ]
+        },
+        {
+         "name": "RawImage_Dummy04",
+         "active": true,
+         "aMin": [
+          0,
+          0
+         ],
+         "aMax": [
+          0,
+          0
+         ],
+         "pos": [
+          84,
+          339
+         ],
+         "size": [
+          275,
+          275
+         ],
+         "pivot": [
+          0,
+          0
+         ],
+         "rawImage": {
+          "src": "unity/_Images/Content/PlayMain/PlayMainDrawing/Image_PlayMainDrawDummy04.png",
+          "texSize": [
+           512,
+           512
+          ],
+          "color": "#FFFFFF",
+          "alpha": 1,
+          "uvRect": [
+           0,
+           0,
+           1,
+           1
+          ]
+         },
+         "canvasGroup": {
+          "alpha": 1
+         },
+         "components": [
+          "CanvasRenderer",
+          "RawImage",
+          "CanvasGroup"
+         ]
+        },
+        {
+         "name": "RawImage_Dummy05",
+         "active": true,
+         "aMin": [
+          1,
+          0
+         ],
+         "aMax": [
+          1,
+          0
+         ],
+         "pos": [
+          -46,
+          241
+         ],
+         "size": [
+          255,
+          255
+         ],
+         "pivot": [
+          1,
+          0
+         ],
+         "rawImage": {
+          "src": "unity/_Images/Content/PlayMain/PlayMainDrawing/Image_PlayMainDrawDummy03.png",
+          "texSize": [
+           512,
+           512
+          ],
+          "color": "#FFFFFF",
+          "alpha": 1,
+          "uvRect": [
+           0,
+           0,
+           1,
+           1
+          ]
+         },
+         "canvasGroup": {
+          "alpha": 1
+         },
+         "components": [
+          "CanvasRenderer",
+          "RawImage",
+          "CanvasGroup"
+         ]
+        },
+        {
+         "name": "RawImage_Dummy01",
+         "active": true,
+         "aMin": [
+          0,
+          0
+         ],
+         "aMax": [
+          0,
+          0
+         ],
+         "pos": [
+          44,
+          204
+         ],
+         "size": [
+          315,
+          315
+         ],
+         "pivot": [
+          0,
+          0
+         ],
+         "rawImage": {
+          "src": "unity/_Images/Content/PlayMain/PlayMainDrawing/Image_PlayMainDrawDummy02.png",
+          "texSize": [
+           512,
+           512
+          ],
+          "color": "#FFFFFF",
+          "alpha": 1,
+          "uvRect": [
+           0,
+           0,
+           1,
+           1
+          ]
+         },
+         "canvasGroup": {
+          "alpha": 1
+         },
+         "components": [
+          "CanvasRenderer",
+          "RawImage",
+          "CanvasGroup"
+         ]
+        },
+        {
+         "name": "Image_Front",
+         "active": true,
+         "aMin": [
+          0.5,
+          0
+         ],
+         "aMax": [
+          0.5,
+          0
+         ],
+         "pos": [
+          0,
+          0
+         ],
+         "size": [
+          984,
+          397
+         ],
+         "pivot": [
+          0.5,
+          0
+         ],
+         "image": {
+          "src": "unity/_Images/Content/PlayMain/PlayMainDrawing/Theme/Main/Image_PlayMainDrawInFrontBG.png",
+          "type": "Simple",
+          "color": "#FFFFFF",
+          "alpha": 1,
+          "ppuMul": 1,
+          "texSize": [
+           984,
+           397
+          ],
+          "preserveAspect": false,
+          "fillCenter": true
+         },
+         "components": [
+          "CanvasRenderer",
+          "Image",
+          "ImageNormalFx"
+         ],
+         "props": {
+          "ImageNormalFx": {
+           "template": "Assets/_Effects/SurfaceFx/Mat_ImageNormalFx.mat",
+           "normalTemplate": "Assets/_Effects/ProductFx/Mat_EnhancementInvertedNormal.mat",
+           "smoothTemplate": "Assets/_Effects/ScreenFx/Mat_Blur.mat",
+           "normalTexture": "unity/_Images/Content/PlayMain/PlayMainDrawing/Theme/Main/Image_PlayMainDrawInFrontBGNormal.png",
+           "strength": 1,
+           "lightDirection": {
+            "x": 0.15,
+            "y": 0.6,
+            "z": 0.4
+           },
+           "motion": 1,
+           "motionAmount": 0.5,
+           "motionDuration": 4
+          }
+         },
+         "refs": {
+          "ImageNormalFx.normalTexture": "unity/_Images/Content/PlayMain/PlayMainDrawing/Theme/Main/Image_PlayMainDrawInFrontBGNormal.png"
+         }
+        },
+        {
+         "name": "Image_Glass",
+         "active": true,
+         "aMin": [
+          0,
+          0
+         ],
+         "aMax": [
+          1,
+          1
+         ],
+         "pos": [
+          0,
+          0
+         ],
+         "size": [
+          0,
+          0
+         ],
+         "pivot": [
+          0.5,
+          0.5
+         ],
+         "image": {
+          "src": "unity/_Images/Content/PlayMain/PlayMainDrawing/Image_PlayMainDrawingGlass.png",
+          "type": "Simple",
+          "color": "#FFFFFF",
+          "alpha": 1,
+          "ppuMul": 1,
+          "texSize": [
+           978,
+           1374
+          ],
+          "preserveAspect": false,
+          "fillCenter": true,
+          "materialPath": "Assets/_Effects/ScreenFx/GlassShine.mat"
+         },
+         "components": [
+          "CanvasRenderer",
+          "Image"
+         ]
+        },
+        {
+         "name": "Image_TutorialInfo",
+         "active": true,
+         "aMin": [
+          0.5,
+          0.5
+         ],
+         "aMax": [
+          0.5,
+          0.5
+         ],
+         "pos": [
+          0,
+          -616
+         ],
+         "size": [
+          978,
+          142
+         ],
+         "pivot": [
+          0.5,
+          0.5
+         ],
+         "image": {
+          "src": null,
+          "type": "Simple",
+          "color": "#171324",
+          "alpha": 1,
+          "ppuMul": 1,
+          "preserveAspect": false,
+          "fillCenter": true
+         },
+         "canvasGroup": {
+          "alpha": 1
+         },
+         "components": [
+          "CanvasRenderer",
+          "Image",
+          "UILayerBlur",
+          "CanvasGroup"
+         ],
+         "props": {
+          "UILayerBlur": {
+           "radius": 24,
+           "tint": 0.7
+          }
+         }
+        },
+        {
+         "name": "RT_Guide",
+         "active": true,
+         "aMin": [
+          0.5,
+          0
+         ],
+         "aMax": [
+          0.5,
+          0
+         ],
+         "pos": [
+          0,
+          142
+         ],
+         "size": [
+          978,
+          108
+         ],
+         "pivot": [
+          0.5,
+          1
+         ],
+         "components": [],
+         "children": [
+          {
+           "name": "Text_Guide",
+           "active": true,
+           "aMin": [
+            0.5,
+            1
+           ],
+           "aMax": [
+            0.5,
+            1
+           ],
+           "pos": [
+            0,
+            -28
+           ],
+           "size": [
+            0,
+            52
+           ],
+           "pivot": [
+            0.5,
+            1
+           ],
+           "text": {
+            "text": "지금 무료로 뽑기를 체험해 보세요!",
+            "weight": "Bold",
+            "size": 36,
+            "autoSize": false,
+            "color": "#FFFFFF",
+            "alpha": 1,
+            "hAlign": "center",
+            "vAlign": "middle",
+            "wrap": true,
+            "overflow": 0,
+            "lineSpacing": 0,
+            "charSpacing": 0
+           },
+           "sizeFitter": {
+            "h": 2,
+            "v": 0
+           },
+           "components": [
+            "CanvasRenderer",
+            "TextMeshProUGUI",
+            "ContentSizeFitter"
+           ]
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Button_Count",
+     "active": true,
+     "aMin": [
+      1,
+      0
+     ],
+     "aMax": [
+      1,
+      0
+     ],
+     "pos": [
+      -96,
+      398
+     ],
+     "size": [
+      172,
+      172
+     ],
+     "pivot": [
+      1,
+      0
+     ],
+     "image": {
+      "src": "unity/_Images/Content/PlayMain/PlayMainDrawing/Image_DrawCountButton.png",
+      "type": "Simple",
+      "color": "#FFFFFF",
+      "alpha": 1,
+      "ppuMul": 1,
+      "texSize": [
+       512,
+       512
+      ],
+      "preserveAspect": false,
+      "fillCenter": true,
+      "raycast": true
+     },
+     "button": {
+      "transition": 2,
+      "pressed": "unity/_Images/Content/PlayMain/PlayMainDrawing/Image_DrawCountButtonSelect.png",
+      "interactable": false
+     },
+     "components": [
+      "CanvasRenderer",
+      "Image",
+      "Button",
+      "TutorialButtonGlow",
+      "PlaySelectSound"
+     ],
+     "props": {
+      "TutorialButtonGlow": {
+       "activationShader": "Assets/_Effects/ScreenFx/DrawingThemeShine.shader",
+       "glowSoft": "local:Image_CountGlow:TrueShadow",
+       "glowCore": "local:Image_CountGlow:TrueShadow",
+       "shine": "local:Image_GuideShine:GameObject",
+       "illuminatedMaterial": null,
+       "guideCircle": null,
+       "guideIcon": null,
+       "iconGlow": null
+      }
+     },
+     "children": [
+      {
+       "name": "Image_CountGlow",
+       "active": true,
+       "aMin": [
+        0.5,
+        0.5
+       ],
+       "aMax": [
+        0.5,
+        0.5
+       ],
+       "pos": [
+        0,
+        0
+       ],
+       "size": [
+        160,
+        160
+       ],
+       "pivot": [
+        0.5,
+        0.5
+       ],
+       "image": {
+        "src": "unity/_Images/AX/Circles/Circle_@_96x96_-_Clean.png",
+        "type": "Simple",
+        "color": "#000000",
+        "alpha": 0,
+        "ppuMul": 1,
+        "border": [
+         48,
+         48,
+         48,
+         48
+        ],
+        "texSize": [
+         96,
+         96
+        ],
+        "preserveAspect": false,
+        "fillCenter": true
+       },
+       "trueShadows": [
+        {
+         "enabled": false,
+         "size": 40,
+         "spread": 0,
+         "angle": 90,
+         "dist": 0,
+         "color": "#8C7CDD",
+         "alpha": 0.5,
+         "blend": "Normal",
+         "inset": false,
+         "cutout": true,
+         "useCasterAlpha": false,
+         "ignoreCasterColor": true
+        },
+        {
+         "enabled": false,
+         "size": 10,
+         "spread": 0,
+         "angle": 90,
+         "dist": 0,
+         "color": "#F0D6FF",
+         "alpha": 0.9,
+         "blend": "Screen",
+         "inset": false,
+         "cutout": true,
+         "useCasterAlpha": false,
+         "ignoreCasterColor": true
+        }
+       ],
+       "components": [
+        "CanvasRenderer",
+        "Image",
+        "TrueShadow",
+        "TrueShadow"
+       ],
+       "disabledComponents": [
+        "TrueShadow",
+        "TrueShadow"
+       ]
+      },
+      {
+       "name": "Image_GuideShine",
+       "active": false,
+       "aMin": [
+        0,
+        0
+       ],
+       "aMax": [
+        1,
+        1
+       ],
+       "pos": [
+        0,
+        0
+       ],
+       "size": [
+        0,
+        0
+       ],
+       "pivot": [
+        0.5,
+        0.5
+       ],
+       "image": {
+        "src": "unity/_Images/Content/PlayMain/PlayMainDrawing/Image_DrawCountButton.png",
+        "type": "Simple",
+        "color": "#FFFFFF",
+        "alpha": 1,
+        "ppuMul": 1,
+        "texSize": [
+         512,
+         512
+        ],
+        "preserveAspect": false,
+        "fillCenter": true,
+        "materialPath": "Assets/_Shaders/Material_TutorialGuideShine.mat"
+       },
+       "layoutElement": {
+        "ignore": true
+       },
+       "components": [
+        "CanvasRenderer",
+        "Image",
+        "LayoutElement"
+       ]
+      },
+      {
+       "name": "Text_Count",
+       "active": true,
+       "aMin": [
+        0.5,
+        0.5
+       ],
+       "aMax": [
+        0.5,
+        0.5
+       ],
+       "pos": [
+        0,
+        0
+       ],
+       "size": [
+        0,
+        60
+       ],
+       "pivot": [
+        0.5,
+        0.5
+       ],
+       "text": {
+        "text": "1회",
+        "weight": "Bold",
+        "size": 42,
+        "autoSize": false,
+        "color": "#9686ED",
+        "alpha": 1,
+        "vertexColor": "#FFFFFF",
+        "vertexAlpha": 1,
+        "hAlign": "center",
+        "vAlign": "middle",
+        "wrap": true,
+        "overflow": 0,
+        "lineSpacing": 0,
+        "charSpacing": 0
+       },
+       "sizeFitter": {
+        "h": 2,
+        "v": 0
+       },
+       "components": [
+        "CanvasRenderer",
+        "TextMeshProUGUI",
+        "ContentSizeFitter"
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Button_Draw",
+     "active": true,
+     "aMin": [
+      0.5,
+      0
+     ],
+     "aMax": [
+      0.5,
+      0
+     ],
+     "pos": [
+      0,
+      180
+     ],
+     "size": [
+      600,
+      600
+     ],
+     "pivot": [
+      0.5,
+      0
+     ],
+     "image": {
+      "src": "unity/_Images/Content/PlayMain/PlayMainDrawing/Theme/Main/Image_DrawButton.png",
+      "type": "Simple",
+      "color": "#FFFFFF",
+      "alpha": 1,
+      "ppuMul": 1,
+      "texSize": [
+       512,
+       512
+      ],
+      "preserveAspect": false,
+      "fillCenter": true,
+      "raycast": true
+     },
+     "button": {
+      "transition": 2,
+      "pressed": "unity/_Images/Content/PlayMain/PlayMainDrawing/Theme/Main/Image_DrawButtonSelect.png",
+      "disabled": "unity/_Images/Content/PlayMain/PlayMainDrawing/Theme/Main/Image_DrawButtonLock.png",
+      "interactable": false
+     },
+     "trueShadows": [
+      {
+       "enabled": false,
+       "size": 40,
+       "spread": 0,
+       "angle": 90,
+       "dist": 0,
+       "color": "#8C7CDD",
+       "alpha": 0.5,
+       "blend": "Normal",
+       "inset": false,
+       "cutout": true,
+       "useCasterAlpha": false,
+       "ignoreCasterColor": true
+      },
+      {
+       "enabled": false,
+       "size": 10,
+       "spread": 0,
+       "angle": 90,
+       "dist": 0,
+       "color": "#F0D6FF",
+       "alpha": 0.9,
+       "blend": "Screen",
+       "inset": false,
+       "cutout": true,
+       "useCasterAlpha": false,
+       "ignoreCasterColor": true
+      }
+     ],
+     "components": [
+      "CanvasRenderer",
+      "Image",
+      "Button",
+      "TrueShadow",
+      "TrueShadow",
+      "TutorialButtonGlow",
+      "PlaySelectSound"
+     ],
+     "disabledComponents": [
+      "TrueShadow",
+      "TrueShadow"
+     ],
+     "props": {
+      "TutorialButtonGlow": {
+       "activationShader": "Assets/_Effects/ScreenFx/DrawingThemeShine.shader",
+       "glowSoft": "local:Button_Draw:TrueShadow",
+       "glowCore": "local:Button_Draw:TrueShadow",
+       "shine": "local:Image_GuideShine:GameObject",
+       "illuminatedMaterial": "Assets/_Shaders/Material_TutorialButtonIllumination.mat",
+       "guideCircle": null,
+       "guideIcon": null,
+       "iconGlow": null
+      }
+     },
+     "children": [
+      {
+       "name": "Image_GuideShine",
+       "active": false,
+       "aMin": [
+        0,
+        0
+       ],
+       "aMax": [
+        1,
+        1
+       ],
+       "pos": [
+        0,
+        0
+       ],
+       "size": [
+        0,
+        0
+       ],
+       "pivot": [
+        0.5,
+        0.5
+       ],
+       "image": {
+        "src": "unity/_Images/Content/PlayMain/PlayMainDrawing/Theme/Main/Image_DrawButton.png",
+        "type": "Simple",
+        "color": "#FFFFFF",
+        "alpha": 1,
+        "ppuMul": 1,
+        "texSize": [
+         512,
+         512
+        ],
+        "preserveAspect": false,
+        "fillCenter": true,
+        "materialPath": "Assets/_Shaders/Material_TutorialGuideShine.mat"
+       },
+       "layoutElement": {
+        "ignore": true
+       },
+       "components": [
+        "CanvasRenderer",
+        "Image",
+        "LayoutElement"
+       ]
+      },
+      {
+       "name": "Image",
+       "active": true,
+       "aMin": [
+        0,
+        0
+       ],
+       "aMax": [
+        1,
+        1
+       ],
+       "pos": [
+        0,
+        0
+       ],
+       "size": [
+        -60,
+        -400
+       ],
+       "pivot": [
+        0.5,
+        0.5
+       ],
+       "image": {
+        "src": null,
+        "type": "Simple",
+        "color": "#FFFFFF",
+        "alpha": 0,
+        "ppuMul": 1,
+        "preserveAspect": false,
+        "fillCenter": true
+       },
+       "components": [
+        "CanvasRenderer",
+        "Image"
+       ]
+      },
+      {
+       "name": "GO_PlayInfo",
+       "active": true,
+       "aMin": [
+        0.5,
+        0.5
+       ],
+       "aMax": [
+        0.5,
+        0.5
+       ],
+       "pos": [
+        0,
+        8
+       ],
+       "size": [
+        0,
+        118
+       ],
+       "pivot": [
+        0.5,
+        0.5
+       ],
+       "layoutGroup": {
+        "kind": "V",
+        "spacing": 0,
+        "padding": [
+         0,
+         0,
+         0,
+         0
+        ],
+        "childAlign": 4,
+        "controlW": true,
+        "controlH": true,
+        "expandW": false,
+        "expandH": false,
+        "scaleW": true,
+        "scaleH": false,
+        "reverse": false
+       },
+       "sizeFitter": {
+        "h": 2,
+        "v": 0
+       },
+       "components": [
+        "VerticalLayoutGroup",
+        "ContentSizeFitter"
+       ],
+       "children": [
+        {
+         "name": "Text_PlayInfo",
+         "active": true,
+         "aMin": [
+          0,
+          0
+         ],
+         "aMax": [
+          0,
+          0
+         ],
+         "pos": [
+          0,
+          0
+         ],
+         "size": [
+          0,
+          0
+         ],
+         "pivot": [
+          0.5,
+          0.5
+         ],
+         "text": {
+          "text": "무료 뽑기",
+          "weight": "Bold",
+          "size": 52,
+          "autoSize": false,
+          "color": "#FFFFFF",
+          "alpha": 1,
+          "hAlign": "center",
+          "vAlign": "middle",
+          "wrap": true,
+          "overflow": 0,
+          "lineSpacing": 0,
+          "charSpacing": 0
+         },
+         "layoutElement": {
+          "minH": 72,
+          "prefW": 220,
+          "prefH": 72
+         },
+         "components": [
+          "CanvasRenderer",
+          "TextMeshProUGUI",
+          "TextAnimator_TMP",
+          "LayoutElement"
+         ]
+        },
+        {
+         "name": "GO_PlayInfoTicket",
+         "active": false,
+         "aMin": [
+          0,
+          0
+         ],
+         "aMax": [
+          0,
+          0
+         ],
+         "pos": [
+          0,
+          0
+         ],
+         "size": [
+          0,
+          0
+         ],
+         "pivot": [
+          0.5,
+          0.5
+         ],
+         "image": {
+          "src": "unity/_Images/AX/Circles/Circle_@_46x46_-_Clean.png",
+          "type": "Sliced",
+          "color": "#FFFFFF",
+          "alpha": 0.251,
+          "ppuMul": 1,
+          "border": [
+           23,
+           23,
+           23,
+           23
+          ],
+          "texSize": [
+           46,
+           46
+          ],
+          "preserveAspect": false,
+          "fillCenter": true
+         },
+         "layoutElement": {
+          "minH": 46
+         },
+         "layoutGroup": {
+          "kind": "H",
+          "spacing": 4,
+          "padding": [
+           16,
+           16,
+           0,
+           0
+          ],
+          "childAlign": 4,
+          "controlW": true,
+          "controlH": false,
+          "expandW": false,
+          "expandH": true,
+          "scaleW": true,
+          "scaleH": false,
+          "reverse": false
+         },
+         "components": [
+          "CanvasRenderer",
+          "Image",
+          "LayoutElement",
+          "HorizontalLayoutGroup"
+         ],
+         "children": [
+          {
+           "name": "RawImage_PlayInfoTicket",
+           "active": true,
+           "aMin": [
+            0,
+            0
+           ],
+           "aMax": [
+            0,
+            0
+           ],
+           "pos": [
+            0,
+            0
+           ],
+           "size": [
+            0,
+            46
+           ],
+           "pivot": [
+            0.5,
+            0.5
+           ],
+           "rawImage": {
+            "src": "unity/_Images/Icon/Item/Icon_TicketPlay.png",
+            "texSize": [
+             512,
+             512
+            ],
+            "color": "#FFFFFF",
+            "alpha": 1,
+            "uvRect": [
+             0,
+             0,
+             1,
+             1
+            ]
+           },
+           "layoutElement": {
+            "minW": 46,
+            "prefW": 46
+           },
+           "components": [
+            "CanvasRenderer",
+            "RawImage",
+            "LayoutElement"
+           ]
+          },
+          {
+           "name": "Text_DrawTicket",
+           "active": true,
+           "aMin": [
+            0,
+            0
+           ],
+           "aMax": [
+            0,
+            0
+           ],
+           "pos": [
+            0,
+            0
+           ],
+           "size": [
+            0,
+            40
+           ],
+           "pivot": [
+            0.5,
+            0.5
+           ],
+           "text": {
+            "text": "2장",
+            "weight": "Regular",
+            "size": 28,
+            "autoSize": false,
+            "color": "#3B3178",
+            "alpha": 0.6,
+            "vertexColor": "#FFFFFF",
+            "vertexAlpha": 1,
+            "hAlign": "center",
+            "vAlign": "middle",
+            "wrap": true,
+            "overflow": 0,
+            "lineSpacing": 0,
+            "charSpacing": 0
+           },
+           "layoutElement": {
+            "minH": 72
+           },
+           "components": [
+            "CanvasRenderer",
+            "TextMeshProUGUI",
+            "LayoutElement"
+           ]
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "DrawingJoyStick",
+     "active": true,
+     "aMin": [
+      0,
+      0
+     ],
+     "aMax": [
+      0,
+      0
+     ],
+     "pos": [
+      48,
+      397
+     ],
+     "size": [
+      252,
+      252
+     ],
+     "pivot": [
+      0,
+      0
+     ],
+     "components": [],
+     "children": [
+      {
+       "name": "GO_DrawingJoyStick",
+       "active": true,
+       "aMin": [
+        0.5,
+        0.5
+       ],
+       "aMax": [
+        0.5,
+        0.5
+       ],
+       "pos": [
+        0,
+        0
+       ],
+       "size": [
+        252,
+        252
+       ],
+       "pivot": [
+        0.5,
+        0.5
+       ],
+       "image": {
+        "src": "unity/_Images/Content/PlayMain/PlayMainDrawing/Theme/Main/Image_DrawJoyStick.png",
+        "type": "Simple",
+        "color": "#FFFFFF",
+        "alpha": 1,
+        "ppuMul": 1,
+        "texSize": [
+         2048,
+         410
+        ],
+        "srcSize": [
+         2560,
+         512
+        ],
+        "spriteRect": [
+         819.2,
+         0,
+         409.6,
+         410
+        ],
+        "spriteName": "Image_DrawJoyStick_2",
+        "preserveAspect": false,
+        "fillCenter": true,
+        "raycast": true
+       },
+       "components": [
+        "CanvasRenderer",
+        "Image",
+        "DrawingJoyStick"
+       ],
+       "props": {
+        "DrawingJoyStick": {
+         "arr_sprites": [
+          "unity/_Images/Content/PlayMain/PlayMainDrawing/Theme/Main/Image_DrawJoyStick.png",
+          "unity/_Images/Content/PlayMain/PlayMainDrawing/Theme/Main/Image_DrawJoyStick.png",
+          "unity/_Images/Content/PlayMain/PlayMainDrawing/Theme/Main/Image_DrawJoyStick.png",
+          "unity/_Images/Content/PlayMain/PlayMainDrawing/Theme/Main/Image_DrawJoyStick.png",
+          "unity/_Images/Content/PlayMain/PlayMainDrawing/Theme/Main/Image_DrawJoyStick.png"
+         ],
+         "go_joystickGuide": "local:GO_DrawingJoyStickGuide:GameObject",
+         "is_introPlay": 0
+        }
+       },
+       "refs": {
+        "DrawingJoyStick.arr_sprites[0]": "unity/_Images/Content/PlayMain/PlayMainDrawing/Theme/Main/Image_DrawJoyStick.png",
+        "DrawingJoyStick.arr_sprites[1]": "unity/_Images/Content/PlayMain/PlayMainDrawing/Theme/Main/Image_DrawJoyStick.png",
+        "DrawingJoyStick.arr_sprites[2]": "unity/_Images/Content/PlayMain/PlayMainDrawing/Theme/Main/Image_DrawJoyStick.png",
+        "DrawingJoyStick.arr_sprites[3]": "unity/_Images/Content/PlayMain/PlayMainDrawing/Theme/Main/Image_DrawJoyStick.png",
+        "DrawingJoyStick.arr_sprites[4]": "unity/_Images/Content/PlayMain/PlayMainDrawing/Theme/Main/Image_DrawJoyStick.png"
+       },
+       "children": [
+        {
+         "name": "GO_DrawingJoyStickGuide",
+         "active": false,
+         "aMin": [
+          0,
+          0
+         ],
+         "aMax": [
+          1,
+          1
+         ],
+         "pos": [
+          0,
+          0
+         ],
+         "size": [
+          0,
+          0
+         ],
+         "pivot": [
+          0.5,
+          0.5
+         ],
+         "components": [],
+         "children": [
+          {
+           "name": "Image",
+           "active": true,
+           "aMin": [
+            0.5,
+            0
+           ],
+           "aMax": [
+            0.5,
+            0
+           ],
+           "pos": [
+            70,
+            260
+           ],
+           "size": [
+            239,
+            64
+           ],
+           "pivot": [
+            0.5,
+            0
+           ],
+           "image": {
+            "src": "unity/_Images/Content/Draw/Image_DrawJoystickGuideBG.png",
+            "type": "Simple",
+            "color": "#FFFFFF",
+            "alpha": 1,
+            "ppuMul": 1,
+            "texSize": [
+             239,
+             64
+            ],
+            "preserveAspect": false,
+            "fillCenter": true
+           },
+           "trueShadows": [
+            {
+             "enabled": true,
+             "size": 16,
+             "spread": 0,
+             "angle": 90,
+             "dist": 8,
+             "color": "#46398E",
+             "alpha": 0.1216,
+             "blend": "Normal",
+             "inset": false,
+             "cutout": false,
+             "useCasterAlpha": true,
+             "ignoreCasterColor": false
+            }
+           ],
+           "components": [
+            "CanvasRenderer",
+            "Image",
+            "TrueShadow",
+            "DOTweenAnimation"
+           ],
+           "children": [
+            {
+             "name": "Text",
+             "active": true,
+             "aMin": [
+              0.5,
+              1
+             ],
+             "aMax": [
+              0.5,
+              1
+             ],
+             "pos": [
+              0,
+              -2
+             ],
+             "size": [
+              190.1,
+              52
+             ],
+             "pivot": [
+              0.5,
+              1
+             ],
+             "text": {
+              "text": "좌우 이동하기",
+              "weight": "Medium",
+              "size": 36,
+              "autoSize": false,
+              "color": "#FFFFFF",
+              "alpha": 1,
+              "hAlign": "center",
+              "vAlign": "middle",
+              "wrap": true,
+              "overflow": 0,
+              "lineSpacing": 0,
+              "charSpacing": 0
+             },
+             "sizeFitter": {
+              "h": 2,
+              "v": 0
+             },
+             "components": [
+              "CanvasRenderer",
+              "TextMeshProUGUI",
+              "ContentSizeFitter"
+             ]
+            }
+           ]
+          },
+          {
+           "name": "Arrow",
+           "active": true,
+           "aMin": [
+            0,
+            1
+           ],
+           "aMax": [
+            0,
+            1
+           ],
+           "pos": [
+            12,
+            -40
+           ],
+           "size": [
+            44,
+            44
+           ],
+           "pivot": [
+            0,
+            1
+           ],
+           "components": [],
+           "children": [
+            {
+             "name": "Group",
+             "active": true,
+             "aMin": [
+              0.5,
+              0.5
+             ],
+             "aMax": [
+              0.5,
+              0.5
+             ],
+             "pos": [
+              0,
+              0
+             ],
+             "size": [
+              44,
+              44
+             ],
+             "pivot": [
+              0.5,
+              0.5
+             ],
+             "components": [],
+             "children": [
+              {
+               "name": "Image",
+               "active": true,
+               "aMin": [
+                1,
+                0.5
+               ],
+               "aMax": [
+                1,
+                0.5
+               ],
+               "pos": [
+                0,
+                0
+               ],
+               "size": [
+                19,
+                44
+               ],
+               "pivot": [
+                1,
+                0.5
+               ],
+               "image": {
+                "src": "unity/_Images/Content/Draw/Image_DrawJoystickGuideArrow.png",
+                "type": "Simple",
+                "color": "#8673EA",
+                "alpha": 1,
+                "ppuMul": 1,
+                "texSize": [
+                 19,
+                 44
+                ],
+                "preserveAspect": false,
+                "fillCenter": true
+               },
+               "canvasGroup": {
+                "alpha": 1
+               },
+               "trueShadows": [
+                {
+                 "enabled": true,
+                 "size": 6,
+                 "spread": 0,
+                 "angle": 0,
+                 "dist": 0,
+                 "color": "#986CFF",
+                 "alpha": 0.6,
+                 "blend": "Normal",
+                 "inset": false,
+                 "cutout": false,
+                 "useCasterAlpha": true,
+                 "ignoreCasterColor": false
+                }
+               ],
+               "components": [
+                "CanvasRenderer",
+                "Image",
+                "TrueShadow",
+                "CanvasGroup",
+                "DOTweenAnimation"
+               ]
+              },
+              {
+               "name": "Image (1)",
+               "active": true,
+               "aMin": [
+                0.5,
+                0.5
+               ],
+               "aMax": [
+                0.5,
+                0.5
+               ],
+               "pos": [
+                0,
+                0
+               ],
+               "size": [
+                19,
+                44
+               ],
+               "pivot": [
+                0.5,
+                0.5
+               ],
+               "image": {
+                "src": "unity/_Images/Content/Draw/Image_DrawJoystickGuideArrow.png",
+                "type": "Simple",
+                "color": "#8673EA",
+                "alpha": 1,
+                "ppuMul": 1,
+                "texSize": [
+                 19,
+                 44
+                ],
+                "preserveAspect": false,
+                "fillCenter": true
+               },
+               "canvasGroup": {
+                "alpha": 1
+               },
+               "trueShadows": [
+                {
+                 "enabled": true,
+                 "size": 6,
+                 "spread": 0,
+                 "angle": 0,
+                 "dist": 0,
+                 "color": "#986CFF",
+                 "alpha": 0.6,
+                 "blend": "Normal",
+                 "inset": false,
+                 "cutout": false,
+                 "useCasterAlpha": true,
+                 "ignoreCasterColor": false
+                }
+               ],
+               "components": [
+                "CanvasRenderer",
+                "Image",
+                "TrueShadow",
+                "CanvasGroup",
+                "DOTweenAnimation"
+               ]
+              },
+              {
+               "name": "Image (2)",
+               "active": true,
+               "aMin": [
+                0,
+                0.5
+               ],
+               "aMax": [
+                0,
+                0.5
+               ],
+               "pos": [
+                0,
+                0
+               ],
+               "size": [
+                19,
+                44
+               ],
+               "pivot": [
+                0,
+                0.5
+               ],
+               "image": {
+                "src": "unity/_Images/Content/Draw/Image_DrawJoystickGuideArrow.png",
+                "type": "Simple",
+                "color": "#8673EA",
+                "alpha": 1,
+                "ppuMul": 1,
+                "texSize": [
+                 19,
+                 44
+                ],
+                "preserveAspect": false,
+                "fillCenter": true
+               },
+               "canvasGroup": {
+                "alpha": 1
+               },
+               "trueShadows": [
+                {
+                 "enabled": true,
+                 "size": 6,
+                 "spread": 0,
+                 "angle": 0,
+                 "dist": 0,
+                 "color": "#986CFF",
+                 "alpha": 0.6,
+                 "blend": "Normal",
+                 "inset": false,
+                 "cutout": false,
+                 "useCasterAlpha": true,
+                 "ignoreCasterColor": false
+                }
+               ],
+               "components": [
+                "CanvasRenderer",
+                "Image",
+                "TrueShadow",
+                "CanvasGroup",
+                "DOTweenAnimation"
+               ]
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "name": "Arrow",
+           "active": true,
+           "aMin": [
+            1,
+            1
+           ],
+           "aMax": [
+            1,
+            1
+           ],
+           "pos": [
+            -12,
+            -40
+           ],
+           "size": [
+            44,
+            44
+           ],
+           "pivot": [
+            1,
+            1
+           ],
+           "components": [],
+           "children": [
+            {
+             "name": "Group",
+             "active": true,
+             "aMin": [
+              0.5,
+              0.5
+             ],
+             "aMax": [
+              0.5,
+              0.5
+             ],
+             "pos": [
+              0,
+              0
+             ],
+             "size": [
+              44,
+              44
+             ],
+             "pivot": [
+              0.5,
+              0.5
+             ],
+             "rotZ": 180,
+             "components": [],
+             "children": [
+              {
+               "name": "Image",
+               "active": true,
+               "aMin": [
+                1,
+                0.5
+               ],
+               "aMax": [
+                1,
+                0.5
+               ],
+               "pos": [
+                0,
+                0
+               ],
+               "size": [
+                19,
+                44
+               ],
+               "pivot": [
+                1,
+                0.5
+               ],
+               "image": {
+                "src": "unity/_Images/Content/Draw/Image_DrawJoystickGuideArrow.png",
+                "type": "Simple",
+                "color": "#8673EA",
+                "alpha": 1,
+                "ppuMul": 1,
+                "texSize": [
+                 19,
+                 44
+                ],
+                "preserveAspect": false,
+                "fillCenter": true
+               },
+               "canvasGroup": {
+                "alpha": 1
+               },
+               "trueShadows": [
+                {
+                 "enabled": true,
+                 "size": 6,
+                 "spread": 0,
+                 "angle": 0,
+                 "dist": 0,
+                 "color": "#986CFF",
+                 "alpha": 0.6,
+                 "blend": "Normal",
+                 "inset": false,
+                 "cutout": false,
+                 "useCasterAlpha": true,
+                 "ignoreCasterColor": false
+                }
+               ],
+               "components": [
+                "CanvasRenderer",
+                "Image",
+                "TrueShadow",
+                "CanvasGroup",
+                "DOTweenAnimation"
+               ]
+              },
+              {
+               "name": "Image (1)",
+               "active": true,
+               "aMin": [
+                0.5,
+                0.5
+               ],
+               "aMax": [
+                0.5,
+                0.5
+               ],
+               "pos": [
+                0,
+                0
+               ],
+               "size": [
+                19,
+                44
+               ],
+               "pivot": [
+                0.5,
+                0.5
+               ],
+               "image": {
+                "src": "unity/_Images/Content/Draw/Image_DrawJoystickGuideArrow.png",
+                "type": "Simple",
+                "color": "#8673EA",
+                "alpha": 1,
+                "ppuMul": 1,
+                "texSize": [
+                 19,
+                 44
+                ],
+                "preserveAspect": false,
+                "fillCenter": true
+               },
+               "canvasGroup": {
+                "alpha": 1
+               },
+               "trueShadows": [
+                {
+                 "enabled": true,
+                 "size": 6,
+                 "spread": 0,
+                 "angle": 0,
+                 "dist": 0,
+                 "color": "#986CFF",
+                 "alpha": 0.6,
+                 "blend": "Normal",
+                 "inset": false,
+                 "cutout": false,
+                 "useCasterAlpha": true,
+                 "ignoreCasterColor": false
+                }
+               ],
+               "components": [
+                "CanvasRenderer",
+                "Image",
+                "TrueShadow",
+                "CanvasGroup",
+                "DOTweenAnimation"
+               ]
+              },
+              {
+               "name": "Image (2)",
+               "active": true,
+               "aMin": [
+                0,
+                0.5
+               ],
+               "aMax": [
+                0,
+                0.5
+               ],
+               "pos": [
+                0,
+                0
+               ],
+               "size": [
+                19,
+                44
+               ],
+               "pivot": [
+                0,
+                0.5
+               ],
+               "image": {
+                "src": "unity/_Images/Content/Draw/Image_DrawJoystickGuideArrow.png",
+                "type": "Simple",
+                "color": "#8673EA",
+                "alpha": 1,
+                "ppuMul": 1,
+                "texSize": [
+                 19,
+                 44
+                ],
+                "preserveAspect": false,
+                "fillCenter": true
+               },
+               "canvasGroup": {
+                "alpha": 1
+               },
+               "trueShadows": [
+                {
+                 "enabled": true,
+                 "size": 6,
+                 "spread": 0,
+                 "angle": 0,
+                 "dist": 0,
+                 "color": "#986CFF",
+                 "alpha": 0.6,
+                 "blend": "Normal",
+                 "inset": false,
+                 "cutout": false,
+                 "useCasterAlpha": true,
+                 "ignoreCasterColor": false
+                }
+               ],
+               "components": [
+                "CanvasRenderer",
+                "Image",
+                "TrueShadow",
+                "CanvasGroup",
+                "DOTweenAnimation"
+               ]
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Button_Shop",
+     "active": true,
+     "aMin": [
+      1,
+      0
+     ],
+     "aMax": [
+      1,
+      0
+     ],
+     "pos": [
+      -61,
+      380
+     ],
+     "size": [
+      240,
+      240
+     ],
+     "pivot": [
+      1,
+      0
+     ],
+     "image": {
+      "src": "unity/_Images/Content/PlayMain/Image_PlayMainCoin.png",
+      "type": "Simple",
+      "color": "#FFFFFF",
+      "alpha": 1,
+      "ppuMul": 1,
+      "texSize": [
+       512,
+       512
+      ],
+      "preserveAspect": false,
+      "fillCenter": true,
+      "raycast": true
+     },
+     "button": {
+      "transition": 0,
+      "interactable": false
+     },
+     "components": [
+      "CanvasRenderer",
+      "Image",
+      "Button"
+     ]
+    },
+    {
+     "name": "GO_WinnerBanner",
+     "active": true,
+     "prefab": "Assets/Resources/Prefabs/UI/Other/PlayMainWinnerBanner.prefab",
+     "aMin": [
+      0.5,
+      1
+     ],
+     "aMax": [
+      0.5,
+      1
+     ],
+     "pos": [
+      0,
+      -236
+     ],
+     "size": [
+      548.78,
+      64
+     ],
+     "pivot": [
+      0.5,
+      0.5
+     ],
+     "canvasGroup": {
+      "alpha": 1
+     },
+     "image": {
+      "src": "unity/_Images/AX/Circles/Circle_@_64x64_-_Clean.png",
+      "type": "Sliced",
+      "color": "#222222",
+      "alpha": 0.9,
+      "ppuMul": 1,
+      "border": [
+       32,
+       32,
+       32,
+       32
+      ],
+      "texSize": [
+       64,
+       64
+      ],
+      "preserveAspect": false,
+      "fillCenter": true,
+      "raycast": true
+     },
+     "button": {
+      "transition": 0
+     },
+     "components": [
+      "CanvasGroup",
+      "CanvasRenderer",
+      "Image",
+      "Button",
+      "PlayMainWinnerBanner"
+     ],
+     "props": {
+      "PlayMainWinnerBanner": {
+       "canvas_group": "local:GO_WinnerBanner:CanvasGroup",
+       "button": "local:GO_WinnerBanner:Button",
+       "cells": [
+        "local:Row_0:PlayMainWinnerBannerCell",
+        "local:Row_1:PlayMainWinnerBannerCell"
+       ],
+       "previewNames": 0
+      }
+     },
+     "children": [
+      {
+       "name": "RT_Clip",
+       "active": true,
+       "aMin": [
+        0,
+        0
+       ],
+       "aMax": [
+        1,
+        1
+       ],
+       "pos": [
+        0,
+        0
+       ],
+       "size": [
+        0,
+        0
+       ],
+       "pivot": [
+        0.5,
+        0.5
+       ],
+       "mask": {
+        "kind": "RectMask2D",
+        "showGraphic": true
+       },
+       "components": [
+        "RectMask2D"
+       ],
+       "children": [
+        {
+         "name": "Row_0",
+         "active": true,
+         "prefab": "Assets/Resources/Prefabs/UI/Cell/PlayMainWinnerBannerCell.prefab",
+         "aMin": [
+          0,
+          0.5
+         ],
+         "aMax": [
+          1,
+          0.5
+         ],
+         "pos": [
+          0,
+          0
+         ],
+         "size": [
+          0,
+          64
+         ],
+         "pivot": [
+          0.5,
+          0.5
+         ],
+         "canvasGroup": {
+          "alpha": 1
+         },
+         "components": [
+          "PlayMainWinnerBannerCell",
+          "CanvasGroup"
+         ],
+         "props": {
+          "PlayMainWinnerBannerCell": {
+           "text_info": "local:Text_Info:TextMeshProUGUI",
+           "text_time": "local:Text_Time:TextMeshProUGUI"
+          }
+         },
+         "children": [
+          {
+           "name": "Text_Info",
+           "active": true,
+           "aMin": [
+            0.5,
+            0.5
+           ],
+           "aMax": [
+            0.5,
+            0.5
+           ],
+           "pos": [
+            -64.925,
+            0
+           ],
+           "size": [
+            382.93,
+            56
+           ],
+           "pivot": [
+            0.5,
+            0.5
+           ],
+           "text": {
+            "text": "",
+            "weight": "Medium",
+            "size": 40,
+            "autoSize": false,
+            "color": "#FFFFFF",
+            "alpha": 1,
+            "hAlign": "center",
+            "vAlign": "middle",
+            "wrap": false,
+            "overflow": 0,
+            "lineSpacing": 0,
+            "charSpacing": 0,
+            "richText": false
+           },
+           "components": [
+            "CanvasRenderer",
+            "TextMeshProUGUI"
+           ]
+          },
+          {
+           "name": "Text_Time",
+           "active": true,
+           "aMin": [
+            0.5,
+            0.5
+           ],
+           "aMax": [
+            0.5,
+            0.5
+           ],
+           "pos": [
+            205.465,
+            0
+           ],
+           "size": [
+            101.85,
+            56
+           ],
+           "pivot": [
+            0.5,
+            0.5
+           ],
+           "text": {
+            "text": "",
+            "weight": "Regular",
+            "size": 36,
+            "autoSize": false,
+            "color": "#FFFFFF",
+            "alpha": 1,
+            "hAlign": "center",
+            "vAlign": "middle",
+            "wrap": false,
+            "overflow": 0,
+            "lineSpacing": 0,
+            "charSpacing": 0,
+            "richText": false
+           },
+           "components": [
+            "CanvasRenderer",
+            "TextMeshProUGUI"
+           ]
+          }
+         ]
+        },
+        {
+         "name": "Row_1",
+         "active": false,
+         "prefab": "Assets/Resources/Prefabs/UI/Cell/PlayMainWinnerBannerCell.prefab",
+         "aMin": [
+          0,
+          0.5
+         ],
+         "aMax": [
+          1,
+          0.5
+         ],
+         "pos": [
+          0,
+          88
+         ],
+         "size": [
+          0,
+          64
+         ],
+         "pivot": [
+          0.5,
+          0.5
+         ],
+         "canvasGroup": {
+          "alpha": 1
+         },
+         "components": [
+          "PlayMainWinnerBannerCell",
+          "CanvasGroup"
+         ],
+         "props": {
+          "PlayMainWinnerBannerCell": {
+           "text_info": "local:Text_Info:TextMeshProUGUI",
+           "text_time": "local:Text_Time:TextMeshProUGUI"
+          }
+         },
+         "children": [
+          {
+           "name": "Text_Info",
+           "active": true,
+           "aMin": [
+            0.5,
+            0.5
+           ],
+           "aMax": [
+            0.5,
+            0.5
+           ],
+           "pos": [
+            -64.925,
+            0
+           ],
+           "size": [
+            382.93,
+            56
+           ],
+           "pivot": [
+            0.5,
+            0.5
+           ],
+           "text": {
+            "text": "복싱아복… 님 890,000원 당첨",
+            "weight": "Medium",
+            "size": 40,
+            "autoSize": false,
+            "color": "#FFFFFF",
+            "alpha": 1,
+            "hAlign": "center",
+            "vAlign": "middle",
+            "wrap": false,
+            "overflow": 0,
+            "lineSpacing": 0,
+            "charSpacing": 0,
+            "richText": false
+           },
+           "components": [
+            "CanvasRenderer",
+            "TextMeshProUGUI"
+           ]
+          },
+          {
+           "name": "Text_Time",
+           "active": true,
+           "aMin": [
+            0.5,
+            0.5
+           ],
+           "aMax": [
+            0.5,
+            0.5
+           ],
+           "pos": [
+            205.465,
+            0
+           ],
+           "size": [
+            101.85,
+            56
+           ],
+           "pivot": [
+            0.5,
+            0.5
+           ],
+           "text": {
+            "text": "1시간 전",
+            "weight": "Regular",
+            "size": 36,
+            "autoSize": false,
+            "color": "#FFFFFF",
+            "alpha": 1,
+            "hAlign": "center",
+            "vAlign": "middle",
+            "wrap": false,
+            "overflow": 0,
+            "lineSpacing": 0,
+            "charSpacing": 0,
+            "richText": false
+           },
+           "components": [
+            "CanvasRenderer",
+            "TextMeshProUGUI"
+           ]
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "name": "GO_Result",
+   "active": false,
+   "aMin": [
+    0.5,
+    0.5
+   ],
+   "aMax": [
+    0.5,
+    0.5
+   ],
+   "pos": [
+    0,
+    0
+   ],
+   "size": [
+    1080,
+    2160
+   ],
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "image": {
+    "src": "unity/_Images/Content/PlayMain/PlayMainDrawing/Image_PlayMainDrawResult.jpg",
+    "type": "Simple",
+    "color": "#FFFFFF",
+    "alpha": 1,
+    "ppuMul": 1,
+    "texSize": [
+     1024,
+     2048
+    ],
+    "preserveAspect": false,
+    "fillCenter": true
+   },
+   "canvasGroup": {
+    "alpha": 1
+   },
+   "mask": {
+    "kind": "Mask",
+    "showGraphic": true
+   },
+   "components": [
+    "CanvasRenderer",
+    "Image",
+    "CanvasGroup",
+    "Mask",
+    "UILayerBlurStack"
+   ],
+   "props": {
+    "UILayerBlurStack": {
+     "panelShader": "Assets/_Effects/ScreenFx/Backdrop.shader",
+     "blurShader": "Assets/_Effects/ScreenFx/UILayerBlurFilter.shader",
+     "maxSize": 512,
+     "updateRate": 30,
+     "onChangeOnly": 1
+    }
+   },
+   "children": [
+    {
+     "name": "CG_Page",
+     "active": true,
+     "aMin": [
+      0.5,
+      0.5
+     ],
+     "aMax": [
+      0.5,
+      0.5
+     ],
+     "pos": [
+      0,
+      48.5
+     ],
+     "size": [
+      972,
+      1695
+     ],
+     "pivot": [
+      0.5,
+      0.5
+     ],
+     "mask": {
+      "kind": "RectMask2D",
+      "showGraphic": true
+     },
+     "components": [
+      "RectMask2D"
+     ],
+     "children": [
+      {
+       "name": "GO_LightEffect",
+       "active": true,
+       "aMin": [
+        0.5,
+        0.5
+       ],
+       "aMax": [
+        0.5,
+        0.5
+       ],
+       "pos": [
+        0,
+        385
+       ],
+       "size": [
+        100,
+        100
+       ],
+       "pivot": [
+        0.5,
+        0.5
+       ],
+       "components": [
+        "CanvasRenderer",
+        "ParticleImage"
+       ],
+       "refs": {
+        "ParticleImage.m_Sprite": "unity/_Images/Effect/Effect_SliderLight.png"
+       },
+       "children": [
+        {
+         "name": "PI_Light",
+         "active": true,
+         "aMin": [
+          0.5,
+          0.5
+         ],
+         "aMax": [
+          0.5,
+          0.5
+         ],
+         "pos": [
+          0,
+          0
+         ],
+         "size": [
+          100,
+          100
+         ],
+         "pivot": [
+          0.5,
+          0.5
+         ],
+         "components": [
+          "CanvasRenderer",
+          "ParticleImage"
+         ],
+         "refs": {
+          "ParticleImage.m_Sprite": "unity/_Images/Effect/Effect_Ellipse.png"
+         }
+        },
+        {
+         "name": "Particle Image",
+         "active": true,
+         "aMin": [
+          0.5,
+          0.5
+         ],
+         "aMax": [
+          0.5,
+          0.5
+         ],
+         "pos": [
+          0,
+          0
+         ],
+         "size": [
+          100,
+          100
+         ],
+         "pivot": [
+          0.5,
+          0.5
+         ],
+         "components": [
+          "CanvasRenderer",
+          "ParticleImage"
+         ],
+         "refs": {
+          "ParticleImage.m_Sprite": "unity/_Images/Effect/Effect_Light.png"
+         }
+        },
+        {
+         "name": "Particle Image",
+         "active": true,
+         "aMin": [
+          0.5,
+          0.5
+         ],
+         "aMax": [
+          0.5,
+          0.5
+         ],
+         "pos": [
+          0,
+          0
+         ],
+         "size": [
+          100,
+          100
+         ],
+         "pivot": [
+          0.5,
+          0.5
+         ],
+         "components": [
+          "CanvasRenderer",
+          "ParticleImage"
+         ],
+         "refs": {
+          "ParticleImage.m_Sprite": "unity/_Images/Effect/Effect_Star.png"
+         }
+        }
+       ]
+      },
+      {
+       "name": "CG_ProductInfo",
+       "active": true,
+       "aMin": [
+        0.5,
+        1
+       ],
+       "aMax": [
+        0.5,
+        1
+       ],
+       "pos": [
+        0,
+        -903
+       ],
+       "size": [
+        972,
+        304
+       ],
+       "pivot": [
+        0.5,
+        1
+       ],
+       "canvasGroup": {
+        "alpha": 1
+       },
+       "components": [
+        "CanvasGroup"
+       ],
+       "children": [
+        {
+         "name": "Text_Brand",
+         "active": true,
+         "aMin": [
+          0.5,
+          1
+         ],
+         "aMax": [
+          0.5,
+          1
+         ],
+         "pos": [
+          0,
+          -8
+         ],
+         "size": [
+          0,
+          48
+         ],
+         "pivot": [
+          0.5,
+          1
+         ],
+         "text": {
+          "text": "",
+          "weight": "Bold",
+          "size": 40,
+          "autoSize": false,
+          "color": "#FBFBFB",
+          "alpha": 1,
+          "vertexColor": "#FFFFFF",
+          "vertexAlpha": 1,
+          "hAlign": "left",
+          "vAlign": "middle",
+          "wrap": true,
+          "overflow": 0,
+          "lineSpacing": 0,
+          "charSpacing": 0,
+          "margin": [
+           72,
+           0,
+           0,
+           0
+          ]
+         },
+         "sizeFitter": {
+          "h": 2,
+          "v": 0
+         },
+         "components": [
+          "CanvasRenderer",
+          "TextMeshProUGUI",
+          "ContentSizeFitter"
+         ],
+         "children": [
+          {
+           "name": "RawImage_Grade",
+           "active": true,
+           "aMin": [
+            0,
+            0.5
+           ],
+           "aMax": [
+            0,
+            0.5
+           ],
+           "pos": [
+            0,
+            0
+           ],
+           "size": [
+            64,
+            64
+           ],
+           "pivot": [
+            0,
+            0.5
+           ],
+           "rawImage": {
+            "src": "unity/_Images/AX/Icon_GradeRandom.png",
+            "texSize": [
+             512,
+             512
+            ],
+            "color": "#FFFFFF",
+            "alpha": 1,
+            "uvRect": [
+             0,
+             0,
+             1,
+             1
+            ]
+           },
+           "components": [
+            "CanvasRenderer",
+            "RawImage"
+           ]
+          }
+         ]
+        },
+        {
+         "name": "Text_Name",
+         "active": true,
+         "aMin": [
+          0.5,
+          0
+         ],
+         "aMax": [
+          0.5,
+          0
+         ],
+         "pos": [
+          0,
+          0
+         ],
+         "size": [
+          876,
+          112
+         ],
+         "pivot": [
+          0.5,
+          0
+         ],
+         "text": {
+          "text": "",
+          "weight": "Regular",
+          "size": 38,
+          "autoSize": false,
+          "color": "#D1D1D1",
+          "alpha": 1,
+          "vertexColor": "#FFFFFF",
+          "vertexAlpha": 1,
+          "hAlign": "center",
+          "vAlign": "middle",
+          "wrap": true,
+          "overflow": 1,
+          "lineSpacing": 0,
+          "charSpacing": 0
+         },
+         "components": [
+          "CanvasRenderer",
+          "TextMeshProUGUI"
+         ]
+        }
+       ]
+      },
+      {
+       "name": "CG_Price",
+       "active": true,
+       "aMin": [
+        0.5,
+        1
+       ],
+       "aMax": [
+        0.5,
+        1
+       ],
+       "pos": [
+        0,
+        -975
+       ],
+       "size": [
+        876,
+        88
+       ],
+       "pivot": [
+        0.5,
+        1
+       ],
+       "canvasGroup": {
+        "alpha": 1
+       },
+       "components": [
+        "CanvasGroup"
+       ],
+       "children": [
+        {
+         "name": "Text_Price",
+         "active": true,
+         "aMin": [
+          0.5,
+          0.5
+         ],
+         "aMax": [
+          0.5,
+          0.5
+         ],
+         "pos": [
+          0,
+          0
+         ],
+         "size": [
+          0,
+          88
+         ],
+         "pivot": [
+          0.5,
+          0.5
+         ],
+         "text": {
+          "text": "",
+          "weight": "Bold",
+          "size": 64,
+          "autoSize": false,
+          "color": "#FFFFFF",
+          "alpha": 1,
+          "hAlign": "left",
+          "vAlign": "middle",
+          "wrap": true,
+          "overflow": 0,
+          "lineSpacing": 0,
+          "charSpacing": 0
+         },
+         "sizeFitter": {
+          "h": 2,
+          "v": 0
+         },
+         "components": [
+          "CanvasRenderer",
+          "TextMeshProUGUI",
+          "ContentSizeFitter"
+         ]
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "CG_ButtonGroup",
+     "active": true,
+     "aMin": [
+      0,
+      0
+     ],
+     "aMax": [
+      1,
+      1
+     ],
+     "pos": [
+      0,
+      0
+     ],
+     "size": [
+      0,
+      0
+     ],
+     "pivot": [
+      0.5,
+      0.5
+     ],
+     "canvasGroup": {
+      "alpha": 1
+     },
+     "components": [
+      "CanvasGroup"
+     ],
+     "children": [
+      {
+       "name": "Button_Order",
+       "active": true,
+       "aMin": [
+        0.5,
+        0.5
+       ],
+       "aMax": [
+        0.5,
+        0.5
+       ],
+       "pos": [
+        0,
+        -921.76
+       ],
+       "size": [
+        772.414,
+        778.24
+       ],
+       "pivot": [
+        0.5,
+        0.5
+       ],
+       "image": {
+        "src": "unity/_Images/Content/Draw/Image_DrawResultButton.png",
+        "type": "Simple",
+        "color": "#FFFFFF",
+        "alpha": 1,
+        "ppuMul": 1,
+        "texSize": [
+         512,
+         512
+        ],
+        "preserveAspect": false,
+        "fillCenter": true,
+        "raycast": true
+       },
+       "button": {
+        "transition": 2,
+        "pressed": "unity/_Images/Content/Draw/Image_DrawResultButtonSelect.png",
+        "disabled": "unity/_Images/Content/Draw/Image_DrawResultButtonLock.png",
+        "interactable": false
+       },
+       "trueShadows": [
+        {
+         "enabled": false,
+         "size": 40,
+         "spread": 0,
+         "angle": 90,
+         "dist": 0,
+         "color": "#000000",
+         "alpha": 0.6,
+         "blend": "Normal",
+         "inset": false,
+         "cutout": true,
+         "useCasterAlpha": false,
+         "ignoreCasterColor": true
+        },
+        {
+         "enabled": false,
+         "size": 10,
+         "spread": 0,
+         "angle": 90,
+         "dist": 0,
+         "color": "#000000",
+         "alpha": 0.6,
+         "blend": "Additive",
+         "inset": false,
+         "cutout": true,
+         "useCasterAlpha": false,
+         "ignoreCasterColor": true
+        }
+       ],
+       "components": [
+        "CanvasRenderer",
+        "Image",
+        "Button",
+        "TutorialButtonGlow",
+        "TrueShadow",
+        "TrueShadow",
+        "PlaySelectSound"
+       ],
+       "disabledComponents": [
+        "TrueShadow",
+        "TrueShadow"
+       ],
+       "props": {
+        "TutorialButtonGlow": {
+         "activationShader": "Assets/_Effects/ScreenFx/DrawingThemeShine.shader",
+         "glowSoft": "local:Button_Order:TrueShadow",
+         "glowCore": "local:Button_Order:TrueShadow",
+         "shine": "local:Image_GuideShine:GameObject",
+         "illuminatedMaterial": "Assets/_Shaders/Material_TutorialButtonIllumination.mat",
+         "guideCircle": null,
+         "guideIcon": null,
+         "iconGlow": null
+        }
+       },
+       "children": [
+        {
+         "name": "Image_GuideShine",
+         "active": false,
+         "aMin": [
+          0,
+          0
+         ],
+         "aMax": [
+          1,
+          1
+         ],
+         "pos": [
+          0,
+          0
+         ],
+         "size": [
+          0,
+          0
+         ],
+         "pivot": [
+          0.5,
+          0.5
+         ],
+         "image": {
+          "src": "unity/_Images/Content/Draw/Image_DrawResultButton.png",
+          "type": "Simple",
+          "color": "#FFFFFF",
+          "alpha": 1,
+          "ppuMul": 1,
+          "texSize": [
+           512,
+           512
+          ],
+          "preserveAspect": false,
+          "fillCenter": true,
+          "materialPath": "Assets/_Shaders/Material_TutorialGuideShine.mat"
+         },
+         "layoutElement": {
+          "ignore": true
+         },
+         "components": [
+          "CanvasRenderer",
+          "Image",
+          "LayoutElement"
+         ]
+        },
+        {
+         "name": "Image",
+         "active": true,
+         "aMin": [
+          0,
+          0
+         ],
+         "aMax": [
+          1,
+          1
+         ],
+         "pos": [
+          0,
+          0
+         ],
+         "size": [
+          -80,
+          -400
+         ],
+         "pivot": [
+          0.5,
+          0.5
+         ],
+         "image": {
+          "src": null,
+          "type": "Simple",
+          "color": "#FFFFFF",
+          "alpha": 0,
+          "ppuMul": 1,
+          "preserveAspect": false,
+          "fillCenter": true
+         },
+         "components": [
+          "CanvasRenderer",
+          "Image"
+         ]
+        },
+        {
+         "name": "GO_PlayInfo",
+         "active": true,
+         "aMin": [
+          0.5,
+          0.5
+         ],
+         "aMax": [
+          0.5,
+          0.5
+         ],
+         "pos": [
+          0,
+          8.76
+         ],
+         "size": [
+          0,
+          118
+         ],
+         "pivot": [
+          0.5,
+          0.5
+         ],
+         "layoutGroup": {
+          "kind": "V",
+          "spacing": 0,
+          "padding": [
+           0,
+           0,
+           0,
+           0
+          ],
+          "childAlign": 4,
+          "controlW": true,
+          "controlH": true,
+          "expandW": false,
+          "expandH": false,
+          "scaleW": true,
+          "scaleH": false,
+          "reverse": false
+         },
+         "sizeFitter": {
+          "h": 2,
+          "v": 0
+         },
+         "components": [
+          "VerticalLayoutGroup",
+          "ContentSizeFitter"
+         ],
+         "children": [
+          {
+           "name": "Text_PlayInfo",
+           "active": true,
+           "aMin": [
+            0,
+            0
+           ],
+           "aMax": [
+            0,
+            0
+           ],
+           "pos": [
+            0,
+            0
+           ],
+           "size": [
+            318,
+            72
+           ],
+           "pivot": [
+            0.5,
+            0.5
+           ],
+           "text": {
+            "text": "상품 받기",
+            "weight": "Bold",
+            "size": 52,
+            "autoSize": false,
+            "color": "#FFFFFF",
+            "alpha": 1,
+            "hAlign": "center",
+            "vAlign": "middle",
+            "wrap": true,
+            "overflow": 0,
+            "lineSpacing": 0,
+            "charSpacing": 0
+           },
+           "layoutElement": {
+            "minW": 318,
+            "minH": 72,
+            "prefW": 318,
+            "prefH": 72,
+            "flexW": 0,
+            "flexH": 0
+           },
+           "components": [
+            "CanvasRenderer",
+            "TextMeshProUGUI",
+            "TextAnimator_TMP",
+            "LayoutElement"
+           ]
+          },
+          {
+           "name": "GO_PlayInfoTicket",
+           "active": false,
+           "aMin": [
+            0,
+            0
+           ],
+           "aMax": [
+            0,
+            0
+           ],
+           "pos": [
+            0,
+            0
+           ],
+           "size": [
+            0,
+            0
+           ],
+           "pivot": [
+            0.5,
+            0.5
+           ],
+           "image": {
+            "src": "unity/_Images/AX/Circles/Circle_@_46x46_-_Clean.png",
+            "type": "Sliced",
+            "color": "#FFFFFF",
+            "alpha": 0.251,
+            "ppuMul": 1,
+            "border": [
+             23,
+             23,
+             23,
+             23
+            ],
+            "texSize": [
+             46,
+             46
+            ],
+            "preserveAspect": false,
+            "fillCenter": true
+           },
+           "layoutElement": {
+            "minH": 46
+           },
+           "layoutGroup": {
+            "kind": "H",
+            "spacing": 4,
+            "padding": [
+             16,
+             16,
+             0,
+             0
+            ],
+            "childAlign": 4,
+            "controlW": true,
+            "controlH": false,
+            "expandW": false,
+            "expandH": true,
+            "scaleW": true,
+            "scaleH": false,
+            "reverse": false
+           },
+           "components": [
+            "CanvasRenderer",
+            "Image",
+            "LayoutElement",
+            "HorizontalLayoutGroup"
+           ],
+           "children": [
+            {
+             "name": "RawImage_PlayInfoTicket",
+             "active": true,
+             "aMin": [
+              0,
+              0
+             ],
+             "aMax": [
+              0,
+              0
+             ],
+             "pos": [
+              0,
+              0
+             ],
+             "size": [
+              0,
+              46
+             ],
+             "pivot": [
+              0.5,
+              0.5
+             ],
+             "rawImage": {
+              "src": "unity/_Images/Content/Image_Space.png",
+              "texSize": [
+               512,
+               512
+              ],
+              "color": "#FFFFFF",
+              "alpha": 1,
+              "uvRect": [
+               0,
+               0,
+               1,
+               1
+              ]
+             },
+             "layoutElement": {
+              "minW": 46,
+              "prefW": 46
+             },
+             "components": [
+              "CanvasRenderer",
+              "RawImage",
+              "LayoutElement"
+             ]
+            },
+            {
+             "name": "Text_PlayInfoTicket",
+             "active": true,
+             "aMin": [
+              0,
+              0
+             ],
+             "aMax": [
+              0,
+              0
+             ],
+             "pos": [
+              0,
+              0
+             ],
+             "size": [
+              0,
+              40
+             ],
+             "pivot": [
+              0.5,
+              0.5
+             ],
+             "text": {
+              "text": "",
+              "weight": "Regular",
+              "size": 28,
+              "autoSize": false,
+              "color": "#3B3178",
+              "alpha": 0.6,
+              "vertexColor": "#FFFFFF",
+              "vertexAlpha": 1,
+              "hAlign": "center",
+              "vAlign": "middle",
+              "wrap": true,
+              "overflow": 0,
+              "lineSpacing": 0,
+              "charSpacing": 0
+             },
+             "layoutElement": {
+              "minH": 72
+             },
+             "components": [
+              "CanvasRenderer",
+              "TextMeshProUGUI",
+              "LayoutElement"
+             ]
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "name": "PlayButtonShine",
+         "active": true,
+         "aMin": [
+          0,
+          0
+         ],
+         "aMax": [
+          1,
+          1
+         ],
+         "pos": [
+          0,
+          0
+         ],
+         "size": [
+          0,
+          0
+         ],
+         "pivot": [
+          0.5,
+          0.5
+         ],
+         "image": {
+          "src": "unity/_Images/Content/Image_PlayButtonShineMask.png",
+          "type": "Simple",
+          "color": "#FFFFFF",
+          "alpha": 0.0039,
+          "ppuMul": 1,
+          "texSize": [
+           512,
+           512
+          ],
+          "preserveAspect": false,
+          "fillCenter": true
+         },
+         "mask": {
+          "kind": "Mask",
+          "showGraphic": false
+         },
+         "components": [
+          "CanvasRenderer",
+          "Image",
+          "Mask"
+         ],
+         "children": [
+          {
+           "name": "RT_ButtonShine",
+           "active": true,
+           "aMin": [
+            0.5,
+            0.5
+           ],
+           "aMax": [
+            0.5,
+            0.5
+           ],
+           "pos": [
+            -300,
+            300
+           ],
+           "size": [
+            120,
+            800
+           ],
+           "pivot": [
+            0.5,
+            0.5
+           ],
+           "rotZ": -45,
+           "image": {
+            "src": null,
+            "type": "Simple",
+            "color": "#FFFFFF",
+            "alpha": 1,
+            "ppuMul": 1,
+            "preserveAspect": false,
+            "fillCenter": true
+           },
+           "components": [
+            "CanvasRenderer",
+            "Image",
+            "FillGradientFilter"
+           ],
+           "props": {
+            "FillGradientFilter": {
+             "_strength": 1,
+             "_renderSpace": 0,
+             "_gradientShape": 1,
+             "_diagonalFlip": 0,
+             "_gradientLinearAngle": 0,
+             "_gradientCenterX": 0,
+             "_gradientCenterY": 0,
+             "_gradientRadius": 0.5,
+             "_gradient": {
+              "serializedVersion": 2,
+              "key0": {
+               "r": 1,
+               "g": 1,
+               "b": 1,
+               "a": 0
+              },
+              "key1": {
+               "r": 1,
+               "g": 1,
+               "b": 1,
+               "a": 0.502
+              },
+              "key2": {
+               "r": 0.8208,
+               "g": 0.723,
+               "b": 0.1967,
+               "a": 0
+              },
+              "key3": {
+               "r": 0.8208,
+               "g": 0.723,
+               "b": 0.1967,
+               "a": 0
+              },
+              "key4": {
+               "r": 0.8208,
+               "g": 0.723,
+               "b": 0.1967,
+               "a": 0
+              },
+              "key5": {
+               "r": 0,
+               "g": 0,
+               "b": 0,
+               "a": 0
+              },
+              "key6": {
+               "r": 0,
+               "g": 0,
+               "b": 0,
+               "a": 0
+              },
+              "key7": {
+               "r": 0,
+               "g": 0,
+               "b": 0,
+               "a": 0
+              },
+              "ctime0": 0,
+              "ctime1": 65535,
+              "ctime2": 65535,
+              "ctime3": 65535,
+              "ctime4": 65535,
+              "ctime5": 0,
+              "ctime6": 0,
+              "ctime7": 0,
+              "atime0": 0,
+              "atime1": 32768,
+              "atime2": 65535,
+              "atime3": 0,
+              "atime4": 0,
+              "atime5": 0,
+              "atime6": 0,
+              "atime7": 0,
+              "m_Mode": 0,
+              "m_ColorSpace": 0,
+              "m_NumColorKeys": 2,
+              "m_NumAlphaKeys": 3
+             },
+             "_gradientLerp": 1,
+             "_gradientColorSpace": 0,
+             "_gradientWrap": 0,
+             "_gradientDither": 0,
+             "_gradientScale": 1,
+             "_gradientScaleCenter": 0.5,
+             "_gradientOffset": 0,
+             "_scrollSpeed": 0,
+             "_blendMode": 0
+            }
+           }
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "name": "Button_OrderSide",
+       "active": false,
+       "aMin": [
+        0.5,
+        0.5
+       ],
+       "aMax": [
+        0.5,
+        0.5
+       ],
+       "pos": [
+        368,
+        -926
+       ],
+       "size": [
+        180,
+        180
+       ],
+       "pivot": [
+        0.5,
+        0.5
+       ],
+       "image": {
+        "src": "unity/_Images/Content/Draw/Image_DrawOrderButton.png",
+        "type": "Simple",
+        "color": "#FFFFFF",
+        "alpha": 1,
+        "ppuMul": 1,
+        "texSize": [
+         512,
+         512
+        ],
+        "preserveAspect": false,
+        "fillCenter": true,
+        "raycast": true
+       },
+       "button": {
+        "transition": 0,
+        "pressed": "unity/_Images/Content/Draw/Image_DrawOrderButtonSelect.png",
+        "disabled": "unity/_Images/Content/Draw/Image_DrawOrderButtonLock.png",
+        "interactable": false
+       },
+       "trueShadows": [
+        {
+         "enabled": false,
+         "size": 40,
+         "spread": 0,
+         "angle": 90,
+         "dist": 0,
+         "color": "#8C7CDD",
+         "alpha": 0.5,
+         "blend": "Normal",
+         "inset": false,
+         "cutout": true,
+         "useCasterAlpha": false,
+         "ignoreCasterColor": true
+        },
+        {
+         "enabled": false,
+         "size": 10,
+         "spread": 0,
+         "angle": 90,
+         "dist": 0,
+         "color": "#F0D6FF",
+         "alpha": 0.9,
+         "blend": "Screen",
+         "inset": false,
+         "cutout": true,
+         "useCasterAlpha": false,
+         "ignoreCasterColor": true
+        }
+       ],
+       "components": [
+        "CanvasRenderer",
+        "Image",
+        "Button",
+        "TrueShadow",
+        "TrueShadow",
+        "TutorialButtonGlow"
+       ],
+       "disabledComponents": [
+        "TrueShadow",
+        "TrueShadow"
+       ],
+       "props": {
+        "TutorialButtonGlow": {
+         "activationShader": "Assets/_Effects/ScreenFx/DrawingThemeShine.shader",
+         "glowSoft": "local:Button_OrderSide:TrueShadow",
+         "glowCore": "local:Button_OrderSide:TrueShadow",
+         "shine": "local:Image_GuideShine:GameObject",
+         "illuminatedMaterial": "Assets/_Shaders/Material_TutorialButtonIllumination.mat",
+         "guideCircle": null,
+         "guideIcon": null,
+         "iconGlow": null
+        }
+       },
+       "children": [
+        {
+         "name": "Image_GuideShine",
+         "active": false,
+         "aMin": [
+          0,
+          0
+         ],
+         "aMax": [
+          1,
+          1
+         ],
+         "pos": [
+          0,
+          0
+         ],
+         "size": [
+          0,
+          0
+         ],
+         "pivot": [
+          0.5,
+          0.5
+         ],
+         "image": {
+          "src": "unity/_Images/Content/Draw/Image_DrawOrderButton.png",
+          "type": "Simple",
+          "color": "#FFFFFF",
+          "alpha": 1,
+          "ppuMul": 1,
+          "texSize": [
+           512,
+           512
+          ],
+          "preserveAspect": false,
+          "fillCenter": true,
+          "materialPath": "Assets/_Shaders/Material_TutorialGuideShine.mat"
+         },
+         "layoutElement": {
+          "ignore": true
+         },
+         "components": [
+          "CanvasRenderer",
+          "Image",
+          "LayoutElement"
+         ]
+        }
+       ]
+      },
+      {
+       "name": "Button_Retry",
+       "active": false,
+       "aMin": [
+        0.5,
+        0.5
+       ],
+       "aMax": [
+        0.5,
+        0.5
+       ],
+       "pos": [
+        -368,
+        -926
+       ],
+       "size": [
+        180,
+        180
+       ],
+       "pivot": [
+        0.5,
+        0.5
+       ],
+       "image": {
+        "src": "unity/_Images/Content/Draw/Image_DrawReButton.png",
+        "type": "Simple",
+        "color": "#FFFFFF",
+        "alpha": 1,
+        "ppuMul": 1,
+        "texSize": [
+         512,
+         512
+        ],
+        "preserveAspect": false,
+        "fillCenter": true
+       },
+       "button": {
+        "transition": 0,
+        "pressed": "unity/_Images/Content/Draw/Image_DrawReButtonSelect.png",
+        "disabled": "unity/_Images/Content/Draw/Image_DrawReButtonLock.png",
+        "interactable": false
+       },
+       "components": [
+        "CanvasRenderer",
+        "Image",
+        "Button"
+       ]
+      }
+     ]
+    },
+    {
+     "name": "GO_ProductFXMask",
+     "active": true,
+     "aMin": [
+      0.5,
+      0.5
+     ],
+     "aMax": [
+      0.5,
+      0.5
+     ],
+     "pos": [
+      0,
+      230
+     ],
+     "size": [
+      978,
+      1374
+     ],
+     "pivot": [
+      0.5,
+      0.5
+     ],
+     "mask": {
+      "kind": "RectMask2D",
+      "showGraphic": true,
+      "softness": [
+       12,
+       24
+      ]
+     },
+     "components": [
+      "RectMask2D"
+     ],
+     "children": [
+      {
+       "name": "PI_GoldConfetti",
+       "active": true,
+       "aMin": [
+        0.5,
+        0.5
+       ],
+       "aMax": [
+        0.5,
+        0.5
+       ],
+       "pos": [
+        0,
+        155
+       ],
+       "size": [
+        1080,
+        1600
+       ],
+       "pivot": [
+        0.5,
+        0.5
+       ],
+       "components": [
+        "CanvasRenderer",
+        "ParticleImage"
+       ],
+       "children": [
+        {
+         "name": "GoldFoil",
+         "active": true,
+         "aMin": [
+          0,
+          0
+         ],
+         "aMax": [
+          1,
+          1
+         ],
+         "pos": [
+          0,
+          0
+         ],
+         "size": [
+          0,
+          0
+         ],
+         "pivot": [
+          0.5,
+          0.5
+         ],
+         "components": [
+          "CanvasRenderer",
+          "GoldConfettiGraphic"
+         ]
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "RawImage_ProductGlow",
+     "active": true,
+     "aMin": [
+      0.5,
+      0.5
+     ],
+     "aMax": [
+      0.5,
+      0.5
+     ],
+     "pos": [
+      0,
+      155
+     ],
+     "size": [
+      1116,
+      1116
+     ],
+     "pivot": [
+      0.5,
+      0.5
+     ],
+     "rawImage": {
+      "src": null,
+      "color": "#FFFFFF",
+      "alpha": 1,
+      "uvRect": [
+       0,
+       0,
+       1,
+       1
+      ],
+      "materialPath": "Assets/_Effects/ParticleImage/GoldConfetti/Mat_ResultProductGlow.mat"
+     },
+     "canvasGroup": {
+      "alpha": 0,
+      "interactable": false,
+      "blocksRaycasts": false
+     },
+     "components": [
+      "CanvasRenderer",
+      "RawImage",
+      "CanvasGroup"
+     ]
+    },
+    {
+     "name": "GO_GoldConfetti",
+     "active": true,
+     "aMin": [
+      0.5,
+      0.5
+     ],
+     "aMax": [
+      0.5,
+      0.5
+     ],
+     "pos": [
+      0,
+      155
+     ],
+     "size": [
+      1080,
+      1600
+     ],
+     "pivot": [
+      0.5,
+      0.5
+     ],
+     "components": [
+      "CanvasRenderer",
+      "ParticleImage"
+     ],
+     "children": [
+      {
+       "name": "GoldFoil",
+       "active": true,
+       "aMin": [
+        0,
+        0
+       ],
+       "aMax": [
+        1,
+        1
+       ],
+       "pos": [
+        0,
+        0
+       ],
+       "size": [
+        0,
+        0
+       ],
+       "pivot": [
+        0.5,
+        0.5
+       ],
+       "components": [
+        "CanvasRenderer",
+        "GoldConfettiGraphic"
+       ]
+      }
+     ]
+    },
+    {
+     "name": "RawImage_Product",
+     "active": true,
+     "aMin": [
+      0.5,
+      0.5
+     ],
+     "aMax": [
+      0.5,
+      0.5
+     ],
+     "pos": [
+      0,
+      385
+     ],
+     "size": [
+      720,
+      720
+     ],
+     "pivot": [
+      0.5,
+      0.5
+     ],
+     "rawImage": {
+      "src": "unity/_Images/AX/Default_Dummy.png",
+      "texSize": [
+       512,
+       512
+      ],
+      "color": "#000000",
+      "alpha": 1,
+      "uvRect": [
+       0,
+       0,
+       1,
+       1
+      ]
+     },
+     "canvasGroup": {
+      "alpha": 1
+     },
+     "trueShadows": [
+      {
+       "enabled": true,
+       "size": 0,
+       "spread": 0.5,
+       "angle": 0,
+       "dist": 0,
+       "color": "#FFFFFF",
+       "alpha": 1,
+       "blend": "Normal",
+       "inset": false,
+       "cutout": false,
+       "useCasterAlpha": false,
+       "ignoreCasterColor": true
+      }
+     ],
+     "components": [
+      "CanvasRenderer",
+      "RawImage",
+      "CanvasGroup",
+      "TrueShadow"
+     ]
+    },
+    {
+     "name": "RT_Multiple",
+     "active": true,
+     "aMin": [
+      0.5,
+      0.5
+     ],
+     "aMax": [
+      0.5,
+      0.5
+     ],
+     "pos": [
+      0,
+      385
+     ],
+     "size": [
+      720,
+      720
+     ],
+     "pivot": [
+      0.5,
+      0.5
+     ],
+     "canvasGroup": {
+      "alpha": 0,
+      "interactable": true,
+      "blocksRaycasts": false
+     },
+     "components": [
+      "CanvasGroup"
+     ]
+    },
+    {
+     "name": "PI_EventConfetti",
+     "active": true,
+     "aMin": [
+      0.5,
+      1
+     ],
+     "aMax": [
+      0.5,
+      1
+     ],
+     "pos": [
+      0,
+      100
+     ],
+     "size": [
+      0,
+      0
+     ],
+     "pivot": [
+      0.5,
+      1
+     ],
+     "rotZ": 180,
+     "layoutElement": {
+      "ignore": true
+     },
+     "components": [
+      "CanvasRenderer",
+      "ParticleImage",
+      "LayoutElement"
+     ]
+    },
+    {
+     "name": "PlayMainResultLog",
+     "active": true,
+     "aMin": [
+      0.5,
+      1
+     ],
+     "aMax": [
+      0.5,
+      1
+     ],
+     "pos": [
+      0,
+      -184
+     ],
+     "size": [
+      972,
+      132
+     ],
+     "pivot": [
+      0.5,
+      1
+     ],
+     "image": {
+      "src": null,
+      "type": "Simple",
+      "color": "#FFFFFF",
+      "alpha": 1,
+      "ppuMul": 1,
+      "preserveAspect": false,
+      "fillCenter": true
+     },
+     "mask": {
+      "kind": "Mask",
+      "showGraphic": false
+     },
+     "components": [
+      "CanvasRenderer",
+      "Image",
+      "Mask"
+     ]
+    },
+    {
+     "name": "Image_ResultLogo",
+     "active": false,
+     "aMin": [
+      0.5,
+      0.5
+     ],
+     "aMax": [
+      0.5,
+      0.5
+     ],
+     "pos": [
+      -372,
+      1010
+     ],
+     "size": [
+      240,
+      38
+     ],
+     "pivot": [
+      0.5,
+      0.5
+     ],
+     "image": {
+      "src": "unity/_Images/Logo/Image_CatchuLogo.png",
+      "type": "Simple",
+      "color": "#FFFFFF",
+      "alpha": 1,
+      "ppuMul": 1,
+      "texSize": [
+       540,
+       86
+      ],
+      "preserveAspect": false,
+      "fillCenter": true
+     },
+     "components": [
+      "CanvasRenderer",
+      "Image"
+     ]
+    },
+    {
+     "name": "RT_ResultListMask",
+     "active": true,
+     "aMin": [
+      0.5,
+      0.5
+     ],
+     "aMax": [
+      0.5,
+      0.5
+     ],
+     "pos": [
+      0,
+      -799
+     ],
+     "size": [
+      972,
+      432
+     ],
+     "pivot": [
+      0.5,
+      0
+     ],
+     "canvasGroup": {
+      "alpha": 1
+     },
+     "mask": {
+      "kind": "RectMask2D",
+      "showGraphic": true
+     },
+     "components": [
+      "CanvasGroup",
+      "RectMask2D"
+     ],
+     "children": [
+      {
+       "name": "GO_DrawingResultProductInfo",
+       "active": false,
+       "aMin": [
+        0,
+        0
+       ],
+       "aMax": [
+        1,
+        0
+       ],
+       "pos": [
+        0,
+        0
+       ],
+       "size": [
+        0,
+        344
+       ],
+       "pivot": [
+        0.5,
+        0
+       ],
+       "image": {
+        "src": null,
+        "type": "Simple",
+        "color": "#2B084A",
+        "alpha": 1,
+        "ppuMul": 1,
+        "preserveAspect": false,
+        "fillCenter": true,
+        "raycast": true
+       },
+       "components": [
+        "CanvasRenderer",
+        "Image",
+        "ToggleGroup",
+        "PlayMainDrawingResultProductInfo",
+        "UILayerBlur"
+       ],
+       "props": {
+        "PlayMainDrawingResultProductInfo": {
+         "drawingResultProductInfoCell": "Assets/Resources/Prefabs/UI/Cell/PlayMainDrawingResultProductInfoCell.prefab",
+         "loopScroll": "local:LoopScroll:LoopHorizontalScrollRect"
+        },
+        "UILayerBlur": {
+         "radius": 24,
+         "tint": 0.3
+        }
+       },
+       "children": [
+        {
+         "name": "LoopScroll",
+         "active": true,
+         "aMin": [
+          0,
+          0
+         ],
+         "aMax": [
+          1,
+          1
+         ],
+         "pos": [
+          0,
+          0
+         ],
+         "size": [
+          0,
+          0
+         ],
+         "pivot": [
+          0.5,
+          0.5
+         ],
+         "components": [
+          "LoopHorizontalScrollRect"
+         ],
+         "children": [
+          {
+           "name": "Viewport",
+           "active": true,
+           "aMin": [
+            0,
+            0
+           ],
+           "aMax": [
+            1,
+            1
+           ],
+           "pos": [
+            0,
+            0
+           ],
+           "size": [
+            0,
+            0
+           ],
+           "pivot": [
+            0.5,
+            0.5
+           ],
+           "image": {
+            "src": null,
+            "type": "Simple",
+            "color": "#FFFFFF",
+            "alpha": 0,
+            "ppuMul": 1,
+            "preserveAspect": false,
+            "fillCenter": true,
+            "raycast": true
+           },
+           "components": [
+            "CanvasRenderer",
+            "Image"
+           ],
+           "children": [
+            {
+             "name": "Content",
+             "active": true,
+             "aMin": [
+              0,
+              1
+             ],
+             "aMax": [
+              0,
+              1
+             ],
+             "pos": [
+              0,
+              0
+             ],
+             "size": [
+              0,
+              0
+             ],
+             "pivot": [
+              0,
+              1
+             ],
+             "layoutGroup": {
+              "kind": "Grid",
+              "spacing": [
+               16,
+               0
+              ],
+              "cellSize": [
+               264,
+               264
+              ],
+              "startCorner": 0,
+              "startAxis": 0,
+              "constraint": 2,
+              "constraintCount": 1,
+              "padding": [
+               48,
+               48,
+               40,
+               40
+              ],
+              "childAlign": 0
+             },
+             "sizeFitter": {
+              "h": 2,
+              "v": 2
+             },
+             "image": {
+              "src": null,
+              "type": "Simple",
+              "color": "#FFFFFF",
+              "alpha": 0,
+              "ppuMul": 1,
+              "preserveAspect": false,
+              "fillCenter": true,
+              "raycast": true
+             },
+             "components": [
+              "CanvasRenderer",
+              "GridLayoutGroup",
+              "ContentSizeFitter",
+              "Image"
+             ]
+            }
+           ]
+          },
+          {
+           "name": "Scrollbar Horizontal",
+           "active": true,
+           "aMin": [
+            0,
+            0
+           ],
+           "aMax": [
+            0,
+            0
+           ],
+           "pos": [
+            0,
+            0
+           ],
+           "size": [
+            0,
+            0
+           ],
+           "pivot": [
+            0,
+            0
+           ],
+           "components": [
+            "Scrollbar"
+           ],
+           "children": [
+            {
+             "name": "Sliding Area",
+             "active": true,
+             "aMin": [
+              0,
+              0
+             ],
+             "aMax": [
+              1,
+              1
+             ],
+             "pos": [
+              0,
+              0
+             ],
+             "size": [
+              0,
+              0
+             ],
+             "pivot": [
+              0.5,
+              0.5
+             ],
+             "components": [],
+             "children": [
+              {
+               "name": "Handle",
+               "active": true,
+               "aMin": [
+                0,
+                0
+               ],
+               "aMax": [
+                0,
+                0
+               ],
+               "pos": [
+                0,
+                0
+               ],
+               "size": [
+                0,
+                0
+               ],
+               "pivot": [
+                0.5,
+                0.5
+               ],
+               "components": []
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "name": "Image",
+         "active": true,
+         "aMin": [
+          0,
+          0
+         ],
+         "aMax": [
+          1,
+          1
+         ],
+         "pos": [
+          0,
+          0
+         ],
+         "size": [
+          0,
+          0
+         ],
+         "pivot": [
+          0.5,
+          0.5
+         ],
+         "image": {
+          "src": null,
+          "type": "Simple",
+          "color": "#8B799B",
+          "alpha": 1,
+          "ppuMul": 1,
+          "preserveAspect": false,
+          "fillCenter": true
+         },
+         "components": [
+          "CanvasRenderer",
+          "Image",
+          "OutlineFilter"
+         ],
+         "props": {
+          "OutlineFilter": {
+           "_strength": 1,
+           "_renderSpace": 0,
+           "_method": 1,
+           "_size": 1,
+           "_distanceShape": 2,
+           "_blur": 0,
+           "_softness": 2,
+           "_sourceAlpha": 0,
+           "_color": {
+            "r": 0.5451,
+            "g": 0.4745,
+            "b": 0.6078,
+            "a": 1
+           },
+           "_texture": null,
+           "_textureOffset": {
+            "x": 0,
+            "y": 0
+           },
+           "_textureScale": {
+            "x": 1,
+            "y": 1
+           },
+           "_direction": 1
+          }
+         }
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Text_TutorialTitle",
+   "active": false,
+   "aMin": [
+    0.5,
+    0.5
+   ],
+   "aMax": [
+    0.5,
+    0.5
+   ],
+   "pos": [
+    0,
+    -407
+   ],
+   "size": [
+    700,
+    100
+   ],
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "text": {
+    "text": "튜토리얼 뽑기",
+    "weight": "Bold",
+    "size": 42,
+    "autoSize": false,
+    "color": "#A6A6A6",
+    "alpha": 1,
+    "vertexColor": "#FFFFFF",
+    "vertexAlpha": 1,
+    "hAlign": "center",
+    "vAlign": "middle",
+    "wrap": true,
+    "overflow": 0,
+    "lineSpacing": 0,
+    "charSpacing": 0
+   },
+   "components": [
+    "CanvasRenderer",
+    "TextMeshProUGUI"
+   ]
+  },
+  {
+   "name": "Button_TutorialSkip",
+   "active": true,
+   "aMin": [
+    1,
+    1
+   ],
+   "aMax": [
+    1,
+    1
+   ],
+   "pos": [
+    -68,
+    -43
+   ],
+   "size": [
+    136,
+    54
+   ],
+   "pivot": [
+    1,
+    1
+   ],
+   "text": {
+    "text": "튜토리얼",
+    "weight": "Medium",
+    "size": 40,
+    "autoSize": true,
+    "sizeMin": 40,
+    "sizeMax": 40,
+    "color": "#AAAAAA",
+    "alpha": 1,
+    "vertexColor": "#FFFFFF",
+    "vertexAlpha": 1,
+    "hAlign": "right",
+    "vAlign": "middle",
+    "wrap": true,
+    "overflow": 0,
+    "lineSpacing": 0,
+    "charSpacing": 0
+   },
+   "button": {
+    "transition": 0
+   },
+   "components": [
+    "CanvasRenderer",
+    "TextMeshProUGUI",
+    "Button"
+   ],
+   "children": [
+    {
+     "name": "GO_SkipDot",
+     "active": true,
+     "aMin": [
+      0,
+      0.5
+     ],
+     "aMax": [
+      0,
+      0.5
+     ],
+     "pos": [
+      -17,
+      0
+     ],
+     "size": [
+      10,
+      10
+     ],
+     "pivot": [
+      0.5,
+      0.5
+     ],
+     "image": {
+      "src": "unity/_Images/AX/Circles/Circle_@_96x96_-_Clean.png",
+      "type": "Simple",
+      "color": "#AAAAAA",
+      "alpha": 1,
+      "ppuMul": 1,
+      "border": [
+       48,
+       48,
+       48,
+       48
+      ],
+      "texSize": [
+       96,
+       96
+      ],
+      "preserveAspect": false,
+      "fillCenter": true
+     },
+     "components": [
+      "CanvasRenderer",
+      "Image"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "GO_Finger",
+   "active": false,
+   "aMin": [
+    0.5,
+    0.5
+   ],
+   "aMax": [
+    0.5,
+    0.5
+   ],
+   "pos": [
+    0,
+    0
+   ],
+   "size": [
+    300,
+    300
+   ],
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "image": {
+    "src": "unity/_Images/Content/Image_Finger.png",
+    "type": "Simple",
+    "color": "#FFFFFF",
+    "alpha": 1,
+    "ppuMul": 1,
+    "texSize": [
+     512,
+     512
+    ],
+    "preserveAspect": false,
+    "fillCenter": true
+   },
+   "canvasGroup": {
+    "alpha": 1
+   },
+   "trueShadows": [
+    {
+     "enabled": true,
+     "size": 20,
+     "spread": 0,
+     "angle": 90,
+     "dist": 0,
+     "color": "#FFFFFF",
+     "alpha": 0.5,
+     "blend": "Screen",
+     "inset": false,
+     "cutout": false,
+     "useCasterAlpha": true,
+     "ignoreCasterColor": false
+    }
+   ],
+   "components": [
+    "CanvasRenderer",
+    "Image",
+    "CanvasGroup",
+    "TrueShadow"
+   ]
+  },
+  {
+   "name": "GO_DeliveryDot",
+   "active": false,
+   "aMin": [
+    0.5,
+    0.5
+   ],
+   "aMax": [
+    0.5,
+    0.5
+   ],
+   "pos": [
+    -487,
+    1010
+   ],
+   "size": [
+    10,
+    10
+   ],
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "image": {
+    "src": "unity/_Images/AX/Circles/Circle_@_96x96_-_Clean.png",
+    "type": "Simple",
+    "color": "#9582DD",
+    "alpha": 1,
+    "ppuMul": 1,
+    "border": [
+     48,
+     48,
+     48,
+     48
+    ],
+    "texSize": [
+     96,
+     96
+    ],
+    "preserveAspect": false,
+    "fillCenter": true
+   },
+   "components": [
+    "CanvasRenderer",
+    "Image"
+   ]
+  },
+  {
+   "name": "RT_TutorialTitle",
+   "active": false,
+   "aMin": [
+    1,
+    1
+   ],
+   "aMax": [
+    1,
+    1
+   ],
+   "pos": [
+    -192,
+    -43
+   ],
+   "size": [
+    158,
+    54
+   ],
+   "pivot": [
+    1,
+    1
+   ],
+   "layoutGroup": {
+    "kind": "H",
+    "spacing": 12,
+    "padding": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "childAlign": 4,
+    "controlW": false,
+    "controlH": false,
+    "expandW": false,
+    "expandH": false,
+    "reverse": false
+   },
+   "components": [
+    "HorizontalLayoutGroup"
+   ],
+   "children": [
+    {
+     "name": "Image_TutorialDot",
+     "active": true,
+     "aMin": [
+      0.5,
+      0.5
+     ],
+     "aMax": [
+      0.5,
+      0.5
+     ],
+     "pos": [
+      -126.5,
+      0
+     ],
+     "size": [
+      10,
+      10
+     ],
+     "pivot": [
+      0.5,
+      0.5
+     ],
+     "image": {
+      "src": "unity/_Images/AX/Circles/Circle_@_96x96_-_Clean.png",
+      "type": "Simple",
+      "color": "#AAAAAA",
+      "alpha": 1,
+      "ppuMul": 1,
+      "border": [
+       48,
+       48,
+       48,
+       48
+      ],
+      "texSize": [
+       96,
+       96
+      ],
+      "preserveAspect": false,
+      "fillCenter": true
+     },
+     "components": [
+      "CanvasRenderer",
+      "Image"
+     ]
+    },
+    {
+     "name": "Text_TutorialLabel",
+     "active": true,
+     "aMin": [
+      1,
+      1
+     ],
+     "aMax": [
+      1,
+      1
+     ],
+     "pos": [
+      -178.5,
+      -70
+     ],
+     "size": [
+      136,
+      54
+     ],
+     "pivot": [
+      0.5,
+      0.5
+     ],
+     "text": {
+      "text": "튜토리얼",
+      "weight": "Medium",
+      "size": 40,
+      "autoSize": false,
+      "color": "#AAAAAA",
+      "alpha": 1,
+      "vertexColor": "#FFFFFF",
+      "vertexAlpha": 1,
+      "hAlign": "right",
+      "vAlign": "middle",
+      "wrap": true,
+      "overflow": 0,
+      "lineSpacing": 0,
+      "charSpacing": 0
+     },
+     "components": [
+      "CanvasRenderer",
+      "TextMeshProUGUI"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "GO_TutorialLogo",
+   "active": true,
+   "aMin": [
+    0,
+    1
+   ],
+   "aMax": [
+    0,
+    1
+   ],
+   "pos": [
+    48,
+    -52
+   ],
+   "size": [
+    235,
+    38
+   ],
+   "pivot": [
+    0,
+    1
+   ],
+   "image": {
+    "src": "unity/_Images/Logo/Image_CatchuLogo.png",
+    "type": "Simple",
+    "color": "#FFFFFF",
+    "alpha": 1,
+    "ppuMul": 1,
+    "texSize": [
+     540,
+     86
+    ],
+    "preserveAspect": true,
+    "fillCenter": true
+   },
+   "components": [
+    "CanvasRenderer",
+    "Image"
+   ]
+  }
+ ]
+}

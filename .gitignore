@@ -22,3 +22,7 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Unity 추출 스크립트 캐시
+tools/.cache/
+__pycache__/

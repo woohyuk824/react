@@ -1,0 +1,70 @@
+{
+ "Assets/_Effects/ScreenFx/GlassShine.mat": {
+  "shader": "Assets/_Effects/ScreenFx/GlassShine.shader",
+  "shaderName": "CatchU/UI/Glass Shine",
+  "textures": {},
+  "floats": {
+   "_ColorMask": 15,
+   "_Duration": 4.5,
+   "_Pulse": 0.6,
+   "_Stencil": 0,
+   "_StencilComp": 8,
+   "_StencilOp": 0,
+   "_StencilReadMask": 255,
+   "_StencilWriteMask": 255,
+   "_Strength": 2.8,
+   "_UseUIAlphaClip": 0
+  },
+  "colors": {}
+ },
+ "Assets/_Shaders/Material_TutorialGuideShine.mat": {
+  "shader": "Assets/_Shaders/TutorialGuideShine.shader",
+  "shaderName": "CatchU/UI/TutorialGuideShine",
+  "textures": {},
+  "floats": {
+   "_ColorMask": 15,
+   "_Stencil": 0,
+   "_StencilComp": 8,
+   "_StencilOp": 0,
+   "_StencilReadMask": 255,
+   "_StencilWriteMask": 255,
+   "_UseUIAlphaClip": 0
+  },
+  "colors": {
+   "_Color": [
+    "#F0DBFF",
+    0.32
+   ]
+  }
+ },
+ "Assets/_Effects/ParticleImage/GoldConfetti/Mat_ResultProductGlow.mat": {
+  "shader": "Assets/_Effects/ParticleImage/GoldConfetti/ResultProductGlow.shader",
+  "shaderName": "CatchU/UI/Result Product Glow",
+  "textures": {},
+  "floats": {
+   "_ColorMask": 15,
+   "_Intensity": 1.15,
+   "_Reveal": 1,
+   "_Stencil": 0,
+   "_StencilComp": 8,
+   "_StencilOp": 0,
+   "_StencilReadMask": 255,
+   "_StencilWriteMask": 255,
+   "_UseUIAlphaClip": 0
+  },
+  "colors": {
+   "_Color": [
+    "#FFFFFF",
+    1
+   ],
+   "_GlowColor": [
+    "#FFF2D1",
+    1
+   ],
+   "_HaloColor": [
+    "#B099FF",
+    1
+   ]
+  }
+ }
+}

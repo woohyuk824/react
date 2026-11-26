@@ -1,0 +1,355 @@
+{
+ "name": "PlayMainWinnerBanner",
+ "active": true,
+ "aMin": [
+  0.5,
+  1
+ ],
+ "aMax": [
+  0.5,
+  1
+ ],
+ "pos": [
+  0,
+  -204
+ ],
+ "size": [
+  548.78,
+  64
+ ],
+ "pivot": [
+  0.5,
+  0.5
+ ],
+ "canvasGroup": {
+  "alpha": 1
+ },
+ "image": {
+  "src": "unity/_Images/AX/Circles/Circle_@_64x64_-_Clean.png",
+  "type": "Sliced",
+  "color": "#222222",
+  "alpha": 0.9,
+  "ppuMul": 1,
+  "border": [
+   32,
+   32,
+   32,
+   32
+  ],
+  "texSize": [
+   64,
+   64
+  ],
+  "preserveAspect": false,
+  "fillCenter": true,
+  "raycast": true
+ },
+ "button": {
+  "transition": 0
+ },
+ "components": [
+  "CanvasGroup",
+  "CanvasRenderer",
+  "Image",
+  "Button",
+  "PlayMainWinnerBanner"
+ ],
+ "props": {
+  "PlayMainWinnerBanner": {
+   "canvas_group": "local:PlayMainWinnerBanner:CanvasGroup",
+   "button": "local:PlayMainWinnerBanner:Button",
+   "cells": [
+    "local:Row_0:PlayMainWinnerBannerCell",
+    "local:Row_1:PlayMainWinnerBannerCell"
+   ],
+   "previewNames": 0
+  }
+ },
+ "children": [
+  {
+   "name": "RT_Clip",
+   "active": true,
+   "aMin": [
+    0,
+    0
+   ],
+   "aMax": [
+    1,
+    1
+   ],
+   "pos": [
+    0,
+    0
+   ],
+   "size": [
+    0,
+    0
+   ],
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "mask": {
+    "kind": "RectMask2D",
+    "showGraphic": true
+   },
+   "components": [
+    "RectMask2D"
+   ],
+   "children": [
+    {
+     "name": "Row_0",
+     "active": true,
+     "prefab": "Assets/Resources/Prefabs/UI/Cell/PlayMainWinnerBannerCell.prefab",
+     "aMin": [
+      0,
+      0.5
+     ],
+     "aMax": [
+      1,
+      0.5
+     ],
+     "pos": [
+      0,
+      0
+     ],
+     "size": [
+      0,
+      64
+     ],
+     "pivot": [
+      0.5,
+      0.5
+     ],
+     "canvasGroup": {
+      "alpha": 1
+     },
+     "components": [
+      "PlayMainWinnerBannerCell",
+      "CanvasGroup"
+     ],
+     "props": {
+      "PlayMainWinnerBannerCell": {
+       "text_info": "local:Text_Info:TextMeshProUGUI",
+       "text_time": "local:Text_Time:TextMeshProUGUI"
+      }
+     },
+     "children": [
+      {
+       "name": "Text_Info",
+       "active": true,
+       "aMin": [
+        0.5,
+        0.5
+       ],
+       "aMax": [
+        0.5,
+        0.5
+       ],
+       "pos": [
+        -64.925,
+        0
+       ],
+       "size": [
+        382.93,
+        56
+       ],
+       "pivot": [
+        0.5,
+        0.5
+       ],
+       "text": {
+        "text": "",
+        "weight": "Medium",
+        "size": 40,
+        "autoSize": false,
+        "color": "#FFFFFF",
+        "alpha": 1,
+        "hAlign": "center",
+        "vAlign": "middle",
+        "wrap": false,
+        "overflow": 0,
+        "lineSpacing": 0,
+        "charSpacing": 0,
+        "richText": false
+       },
+       "components": [
+        "CanvasRenderer",
+        "TextMeshProUGUI"
+       ]
+      },
+      {
+       "name": "Text_Time",
+       "active": true,
+       "aMin": [
+        0.5,
+        0.5
+       ],
+       "aMax": [
+        0.5,
+        0.5
+       ],
+       "pos": [
+        205.465,
+        0
+       ],
+       "size": [
+        101.85,
+        56
+       ],
+       "pivot": [
+        0.5,
+        0.5
+       ],
+       "text": {
+        "text": "",
+        "weight": "Regular",
+        "size": 36,
+        "autoSize": false,
+        "color": "#FFFFFF",
+        "alpha": 1,
+        "hAlign": "center",
+        "vAlign": "middle",
+        "wrap": false,
+        "overflow": 0,
+        "lineSpacing": 0,
+        "charSpacing": 0,
+        "richText": false
+       },
+       "components": [
+        "CanvasRenderer",
+        "TextMeshProUGUI"
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Row_1",
+     "active": false,
+     "prefab": "Assets/Resources/Prefabs/UI/Cell/PlayMainWinnerBannerCell.prefab",
+     "aMin": [
+      0,
+      0.5
+     ],
+     "aMax": [
+      1,
+      0.5
+     ],
+     "pos": [
+      0,
+      88
+     ],
+     "size": [
+      0,
+      64
+     ],
+     "pivot": [
+      0.5,
+      0.5
+     ],
+     "canvasGroup": {
+      "alpha": 1
+     },
+     "components": [
+      "PlayMainWinnerBannerCell",
+      "CanvasGroup"
+     ],
+     "props": {
+      "PlayMainWinnerBannerCell": {
+       "text_info": "local:Text_Info:TextMeshProUGUI",
+       "text_time": "local:Text_Time:TextMeshProUGUI"
+      }
+     },
+     "children": [
+      {
+       "name": "Text_Info",
+       "active": true,
+       "aMin": [
+        0.5,
+        0.5
+       ],
+       "aMax": [
+        0.5,
+        0.5
+       ],
+       "pos": [
+        -64.925,
+        0
+       ],
+       "size": [
+        382.93,
+        56
+       ],
+       "pivot": [
+        0.5,
+        0.5
+       ],
+       "text": {
+        "text": "복싱아복… 님 890,000원 당첨",
+        "weight": "Medium",
+        "size": 40,
+        "autoSize": false,
+        "color": "#FFFFFF",
+        "alpha": 1,
+        "hAlign": "center",
+        "vAlign": "middle",
+        "wrap": false,
+        "overflow": 0,
+        "lineSpacing": 0,
+        "charSpacing": 0,
+        "richText": false
+       },
+       "components": [
+        "CanvasRenderer",
+        "TextMeshProUGUI"
+       ]
+      },
+      {
+       "name": "Text_Time",
+       "active": true,
+       "aMin": [
+        0.5,
+        0.5
+       ],
+       "aMax": [
+        0.5,
+        0.5
+       ],
+       "pos": [
+        205.465,
+        0
+       ],
+       "size": [
+        101.85,
+        56
+       ],
+       "pivot": [
+        0.5,
+        0.5
+       ],
+       "text": {
+        "text": "1시간 전",
+        "weight": "Regular",
+        "size": 36,
+        "autoSize": false,
+        "color": "#FFFFFF",
+        "alpha": 1,
+        "hAlign": "center",
+        "vAlign": "middle",
+        "wrap": false,
+        "overflow": 0,
+        "lineSpacing": 0,
+        "charSpacing": 0,
+        "richText": false
+       },
+       "components": [
+        "CanvasRenderer",
+        "TextMeshProUGUI"
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

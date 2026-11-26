@@ -1,0 +1,295 @@
+{
+ "name": "PlayToastColor",
+ "active": true,
+ "aMin": [
+  0.5,
+  0.5
+ ],
+ "aMax": [
+  0.5,
+  0.5
+ ],
+ "pos": [
+  0,
+  0
+ ],
+ "size": [
+  1080,
+  200
+ ],
+ "pivot": [
+  0.5,
+  0.5
+ ],
+ "scale": [
+  0,
+  1
+ ],
+ "image": {
+  "src": "unity/_Images/Content/Toast/Image_ColorToastMessageSkyBlue.png",
+  "type": "Simple",
+  "color": "#FFFFFF",
+  "alpha": 0,
+  "ppuMul": 2.5,
+  "texSize": [
+   1080,
+   120
+  ],
+  "preserveAspect": false,
+  "fillCenter": true
+ },
+ "canvasGroup": {
+  "alpha": 1
+ },
+ "layoutElement": {
+  "minH": 200,
+  "prefW": 1080
+ },
+ "components": [
+  "CanvasRenderer",
+  "Image",
+  "Toast",
+  "CanvasGroup",
+  "LayoutElement"
+ ],
+ "props": {
+  "Toast": {
+   "BackGround": "local:PlayToastColor:Image",
+   "Text": "local:Text:TextMeshProUGUI",
+   "Text_bottom": "local:Text_Bottom:TextMeshProUGUI",
+   "layoutElement": null,
+   "rt": null,
+   "cg": null
+  }
+ },
+ "children": [
+  {
+   "name": "Image_BG",
+   "active": true,
+   "aMin": [
+    0.5,
+    0.5
+   ],
+   "aMax": [
+    0.5,
+    0.5
+   ],
+   "pos": [
+    0,
+    0
+   ],
+   "size": [
+    1080,
+    0
+   ],
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "image": {
+    "src": "unity/_Images/Content/Toast/Image_GradientToastBlue.png",
+    "type": "Simple",
+    "color": "#FFFFFF",
+    "alpha": 1,
+    "ppuMul": 1,
+    "texSize": [
+     1080,
+     224
+    ],
+    "preserveAspect": false,
+    "fillCenter": true
+   },
+   "layoutGroup": {
+    "kind": "V",
+    "spacing": 8,
+    "padding": [
+     35,
+     35,
+     44,
+     44
+    ],
+    "childAlign": 4,
+    "controlW": false,
+    "controlH": false,
+    "expandW": true,
+    "expandH": true,
+    "reverse": false
+   },
+   "sizeFitter": {
+    "h": 0,
+    "v": 1
+   },
+   "components": [
+    "CanvasRenderer",
+    "Image",
+    "VerticalLayoutGroup",
+    "ContentSizeFitter"
+   ],
+   "children": [
+    {
+     "name": "Text",
+     "active": true,
+     "aMin": [
+      0,
+      1
+     ],
+     "aMax": [
+      0,
+      1
+     ],
+     "pos": [
+      540,
+      -80.015
+     ],
+     "size": [
+      948,
+      0
+     ],
+     "pivot": [
+      0.5,
+      0.5
+     ],
+     "text": {
+      "text": "내용",
+      "weight": "Bold",
+      "size": 52,
+      "autoSize": true,
+      "sizeMin": 18,
+      "sizeMax": 52,
+      "color": "#FFFFFF",
+      "alpha": 1,
+      "hAlign": "center",
+      "vAlign": "middle",
+      "wrap": true,
+      "overflow": 0,
+      "lineSpacing": 0,
+      "charSpacing": 0,
+      "fontStyle": 2,
+      "margin": [
+       0,
+       5,
+       0,
+       5
+      ]
+     },
+     "sizeFitter": {
+      "h": 0,
+      "v": 2
+     },
+     "trueShadows": [
+      {
+       "enabled": true,
+       "size": 16,
+       "spread": 0,
+       "angle": 0,
+       "dist": 0,
+       "color": "#C1B4FD",
+       "alpha": 0.502,
+       "blend": "Normal",
+       "inset": false,
+       "cutout": false,
+       "useCasterAlpha": true,
+       "ignoreCasterColor": false
+      }
+     ],
+     "components": [
+      "CanvasRenderer",
+      "TextMeshProUGUI",
+      "TrueShadow",
+      "ContentSizeFitter"
+     ]
+    },
+    {
+     "name": "Text_Bottom",
+     "active": true,
+     "aMin": [
+      0,
+      1
+     ],
+     "aMax": [
+      0,
+      1
+     ],
+     "pos": [
+      540,
+      -152.89
+     ],
+     "size": [
+      948,
+      0
+     ],
+     "pivot": [
+      0.5,
+      0.5
+     ],
+     "text": {
+      "text": "내용",
+      "weight": "Medium",
+      "size": 40,
+      "autoSize": true,
+      "sizeMin": 18,
+      "sizeMax": 40,
+      "color": "#FFFFFF",
+      "alpha": 1,
+      "hAlign": "center",
+      "vAlign": "middle",
+      "wrap": true,
+      "overflow": 0,
+      "lineSpacing": 0,
+      "charSpacing": 0,
+      "fontStyle": 2,
+      "margin": [
+       0,
+       5,
+       0,
+       5
+      ]
+     },
+     "sizeFitter": {
+      "h": 0,
+      "v": 2
+     },
+     "components": [
+      "CanvasRenderer",
+      "TextMeshProUGUI",
+      "ContentSizeFitter"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "GO_Confetti",
+   "active": false,
+   "prefab": "Assets/_Effects/ParticleImage/PI_Confetti.prefab",
+   "aMin": [
+    0.5,
+    0.5
+   ],
+   "aMax": [
+    0.5,
+    0.5
+   ],
+   "pos": [
+    0,
+    0
+   ],
+   "size": [
+    0,
+    0
+   ],
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "rotZ": 180,
+   "layoutElement": {
+    "ignore": true
+   },
+   "components": [
+    "CanvasRenderer",
+    "ParticleImage",
+    "LayoutElement"
+   ]
+  }
+ ]
+}

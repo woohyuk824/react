@@ -1,0 +1,125 @@
+{
+ "name": "PlayMainWinnerBannerCell",
+ "active": true,
+ "aMin": [
+  0.5,
+  0.5
+ ],
+ "aMax": [
+  0.5,
+  0.5
+ ],
+ "pos": [
+  0,
+  0
+ ],
+ "size": [
+  548.78,
+  54
+ ],
+ "pivot": [
+  0.5,
+  0.5
+ ],
+ "canvasGroup": {
+  "alpha": 1
+ },
+ "components": [
+  "PlayMainWinnerBannerCell",
+  "CanvasGroup"
+ ],
+ "props": {
+  "PlayMainWinnerBannerCell": {
+   "text_info": "local:Text_Info:TextMeshProUGUI",
+   "text_time": "local:Text_Time:TextMeshProUGUI"
+  }
+ },
+ "children": [
+  {
+   "name": "Text_Info",
+   "active": true,
+   "aMin": [
+    0.5,
+    0.5
+   ],
+   "aMax": [
+    0.5,
+    0.5
+   ],
+   "pos": [
+    -64.925,
+    0
+   ],
+   "size": [
+    382.93,
+    54
+   ],
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "text": {
+    "text": "복싱아복… 님 890,000원 당첨",
+    "weight": "Medium",
+    "size": 32,
+    "autoSize": false,
+    "color": "#FFFFFF",
+    "alpha": 1,
+    "hAlign": "center",
+    "vAlign": "middle",
+    "wrap": false,
+    "overflow": 0,
+    "lineSpacing": 0,
+    "charSpacing": 0,
+    "richText": false
+   },
+   "components": [
+    "CanvasRenderer",
+    "TextMeshProUGUI"
+   ]
+  },
+  {
+   "name": "Text_Time",
+   "active": true,
+   "aMin": [
+    0.5,
+    0.5
+   ],
+   "aMax": [
+    0.5,
+    0.5
+   ],
+   "pos": [
+    205.465,
+    0
+   ],
+   "size": [
+    101.85,
+    54
+   ],
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "text": {
+    "text": "1시간 전",
+    "weight": "Regular",
+    "size": 32,
+    "autoSize": false,
+    "color": "#FFFFFF",
+    "alpha": 1,
+    "hAlign": "center",
+    "vAlign": "middle",
+    "wrap": false,
+    "overflow": 0,
+    "lineSpacing": 0,
+    "charSpacing": 0,
+    "richText": false
+   },
+   "components": [
+    "CanvasRenderer",
+    "TextMeshProUGUI"
+   ]
+  }
+ ]
+}
