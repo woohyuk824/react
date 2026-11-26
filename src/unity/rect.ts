@@ -117,6 +117,8 @@ export function setImageSrc(el: UElement, src: string | null) {
   if (!el.unode.image) el.unode.image = { src }
   else el.unode.image.src = src
   paintImage(el)
+  // 실행 중 비우기는 Unity 의 spaceImage(투명 텍스처)와 같다. 흰 사각형으로 칠하지 않는다.
+  if (!src && el.imageLayer) el.imageLayer.style.background = 'transparent'
 }
 
 export function setText(el: UElement, text: string) {

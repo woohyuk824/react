@@ -209,6 +209,7 @@ export class Tutorial {
     setAnchoredPos(this.g('CG_ProductInfo'), this.infoPos[0], this.infoPos[1] - 124)
     setAnchoredPos(this.g('CG_Price'), this.pricePos[0], this.pricePos[1] - 124)
     const image = this.g('RawImage_Product')
+    if (image.unode.image) image.unode.image.color = '#FFFFFF'
     setImageSrc(image, productSrc(p))
     image.style.opacity = '1'
     setImageSrc(this.g('RawImage_Grade'), gradeIcon(p.grade))
@@ -432,17 +433,19 @@ export class Tutorial {
     }))
 
     // 결과 영상
-    this.machineActive = false
     this.joystick.setPaused(true)
     this.banner?.pause()
-    this.resetResultImage()
-    setActive(this.g('GO_Machine'), false)
-    setActive(this.g('GO_Result'), true)
-    this.startResultLight()
-    const title = this.reg.find('Text_TutorialTitle')
-    if (title) setActive(title, false)
     setActive(this.g('Button_TutorialSkip'), false) // allowSkip false
+    // Unity 는 확대 전환이 정지 캡처라 그 뒤에서 결과 화면으로 바뀌어도 보이지 않는다.
+    // 웹은 실제 화면을 확대하므로, 영상 첫 프레임이 화면을 덮은 뒤에 기계 → 결과로 바꾼다(깜빡임 방지).
     await this.playResultVideo(() => {
+      this.machineActive = false
+      this.resetResultImage()
+      setActive(this.g('GO_Machine'), false)
+      setActive(this.g('GO_Result'), true)
+      this.startResultLight()
+      const title = this.reg.find('Text_TutorialTitle')
+      if (title) setActive(title, false)
       // 첫 프레임 표시 직후 확대 캡처 제거 (페이드 없음)
       this.zoom.style.transform = ''
       this.zoom.style.filter = ''
@@ -455,6 +458,8 @@ export class Tutorial {
     setAnchoredPos(this.g('Text_Name'), this.namePos[0], this.namePos[1])
     const image = this.g('RawImage_Product')
     setActive(image, true)
+    // Unity: image.color = Color.white (프리팹 기본 색은 검정 #000000 이라 그대로 두면 검은 실루엣이 된다)
+    if (image.unode.image) image.unode.image.color = '#FFFFFF'
     image.style.opacity = '0'
     try {
       await Promise.race([loadImage(assetUrl(productSrc(p))), wait(8)])
@@ -491,13 +496,17 @@ export class Tutorial {
   private playResultVideo(onFirstFrame: () => void) {
     return new Promise<void>((resolve) => {
       const overlay = document.createElement('div')
-      Object.assign(overlay.style, { position: 'absolute', inset: '0', background: '#000', overflow: 'hidden', zIndex: '50', visibility: 'hidden' })
+      // 첫 프레임 전에는 숨기되 visibility:hidden 이면 브라우저가 영상 프레임을 미리 그리지 않아 검은 화면이 한 번 보인다.
+      // 그래서 투명(opacity 0)으로 그려 두고 첫 프레임 콜백에서 바로 보이게 한다.
+      Object.assign(overlay.style, { position: 'absolute', inset: '0', background: '#000', overflow: 'hidden', zIndex: '50', opacity: '0', pointerEvents: 'none' })
       const video = document.createElement('video')
       video.src = assetUrl('unity/video/Video_Drawing.mp4')
       video.playsInline = true
       video.muted = true
       video.preload = 'auto'
       Object.assign(video.style, { position: 'absolute', inset: '0', width: '100%', height: '100%', objectFit: 'cover' })
+      // UV 줌 시작값(5배)을 미리 적용해 두어, 보이는 순간 크기가 바뀌며 다시 그려지는 빈 프레임을 없앤다.
+      gsap.set(video, { scale: 5 })
       overlay.appendChild(video)
       this.opts.stage.appendChild(overlay)
       let done = false
@@ -516,15 +525,17 @@ export class Tutorial {
       const present = () => {
         if (shown) return
         shown = true
-        overlay.style.visibility = 'visible'
+        overlay.style.opacity = '1'
+        overlay.style.pointerEvents = 'auto'
         video.muted = false // 사용자가 [무료 뽑기]를 눌렀으므로 소리 재생 허용
         // UV 줌 5→1, 0.3s easeOutCubic
-        gsap.fromTo(video, { scale: 5 }, { scale: 1, duration: 0.3, ease: 'power2.out' })
+        gsap.to(video, { scale: 1, duration: 0.3, ease: 'power2.out' })
         onFirstFrame()
       }
+      // 첫 프레임 콜백 다음 프레임까지 기다려 영상이 실제로 화면에 그려진 뒤에 보이게 한다.
       const v = video as HTMLVideoElement & { requestVideoFrameCallback?: (cb: () => void) => number }
-      if (v.requestVideoFrameCallback) v.requestVideoFrameCallback(present)
-      else video.addEventListener('playing', present, { once: true })
+      if (v.requestVideoFrameCallback) v.requestVideoFrameCallback(() => v.requestVideoFrameCallback!(present))
+      else video.addEventListener('playing', () => requestAnimationFrame(() => requestAnimationFrame(present)), { once: true })
       video.addEventListener('ended', finish)
       video.addEventListener('error', () => { present(); finish() })
       const timeout = setTimeout(() => { if (!shown) { present(); finish() } }, 5000)
