@@ -429,7 +429,24 @@ export class Tutorial {
   private onDraw() {
     if (this.step !== Steps.Single) return
     this.step = Steps.Motion
+    // 터치 이벤트 안에서 결과 영상을 미리 만들고 재생 권한을 받아 둔다.
+    // - 집게가 내려가는 동안 미리 불러와 영상 시작 지연(멈칫)을 줄인다.
+    // - 아이폰은 터치 밖에서 소리를 켜면 영상이 멈추므로, 소리 켠 상태로 여기서 한 번 재생·정지해 둔다.
+    this.preparedVideo = this.prepareResultVideo()
     void this.corDraw()
+  }
+
+  private preparedVideo?: HTMLVideoElement
+
+  private prepareResultVideo() {
+    const video = document.createElement('video')
+    video.src = assetUrl('unity/video/Video_Drawing.mp4')
+    video.playsInline = true
+    video.preload = 'auto'
+    video.muted = false
+    video.play().catch(() => {})
+    video.pause()
+    return video
   }
 
   private wallImpact(impact: number) {
@@ -447,6 +464,9 @@ export class Tutorial {
 
   private async corDraw() {
     this.lockButtons()
+    // 확대·블러 전환 레이어를 미리 GPU 레이어로 올려 둔다. 전환 첫 프레임에 레이어를 새로 만들며
+    // 0.1~0.15초 멈췄다가 한 번에 블러로 튀던 현상(깜빡임처럼 보임)을 막는다.
+    Object.assign(this.zoom.style, { willChange: 'transform, filter', transform: 'scale(1)', filter: 'blur(0px)' })
     this.joystick.setPlayMotion(true)
     this.setClawSprite(CLAW_OPEN)
     playSound(Sounds.drawMove, 0.5)
@@ -466,6 +486,11 @@ export class Tutorial {
     const fx = (hand.left + hand.width / 2 - zr.left) / scale
     const fy = (hand.top + hand.height * 0.5 - zr.top) / scale
     this.zoom.style.transformOrigin = `${fx}px ${fy}px`
+    this.joystick.setPaused(true)
+    this.banner?.pause()
+    // 전환 동안에는 상시 효과(앞판·유리·집게 조명, 금빛 샤인)를 마지막 프레임으로 멈춰 그리기 부담을 줄인다.
+    // Unity 도 이 구간은 정지 캡처를 확대하므로 화면 속 효과가 움직이지 않는다.
+    this.machineActive = false
     const z = { t: 0 }
     await tweenDone(gsap.to(z, {
       t: 1, duration: 0.3, ease: 'none',
@@ -546,11 +571,13 @@ export class Tutorial {
       // 첫 프레임 전에는 숨기되 visibility:hidden 이면 브라우저가 영상 프레임을 미리 그리지 않아 검은 화면이 한 번 보인다.
       // 그래서 투명(opacity 0)으로 그려 두고 첫 프레임 콜백에서 바로 보이게 한다.
       Object.assign(overlay.style, { position: 'absolute', inset: '0', background: '#000', overflow: 'hidden', zIndex: '50', opacity: '0', pointerEvents: 'none' })
-      const video = document.createElement('video')
-      video.src = assetUrl('unity/video/Video_Drawing.mp4')
+      const video = this.preparedVideo ?? document.createElement('video')
+      this.preparedVideo = undefined
+      if (!video.src) video.src = assetUrl('unity/video/Video_Drawing.mp4')
       video.playsInline = true
-      video.muted = true
       video.preload = 'auto'
+      // 첫 프레임 전까지는 무음 (PlayMainDrawingResultVideo 와 같음). 터치 때 재생 권한을 받아 둬 이후 소리를 켜도 멈추지 않는다.
+      video.muted = true
       Object.assign(video.style, { position: 'absolute', inset: '0', width: '100%', height: '100%', objectFit: 'cover' })
       // UV 줌 시작값(5배)을 미리 적용해 두어, 보이는 순간 크기가 바뀌며 다시 그려지는 빈 프레임을 없앤다.
       gsap.set(video, { scale: 5 })
